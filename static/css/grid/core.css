@@ -1,0 +1,9 @@
+body {
+    color: #666;
+    text-align: center;
+}
+#page-body {
+    margin: 0 auto;
+    text-align: left;
+    width: 900px;
+}

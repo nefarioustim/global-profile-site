@@ -1,0 +1,20 @@
+#page-masthead h1 {
+/*    background-color: #eee;*/
+    color: #ccc;
+    float: right;
+    font-family: trebuchet, sans-serif;
+    font-size: 300%;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    width: 260px;
+}
+#page-masthead p {
+    border: 1px solid #ccc;
+    clear: right;
+    font-family: georgia, serif;
+    font-size: 123.1%;
+    margin-top: 20px;
+    padding: 20px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	{% block html_head %}
+	<head>
+		{% block page_meta %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		{% endblock page_meta %}
+		<title>{% block title %}{% endblock %}Tim Huegdon</title>
+		{% block page_style %}
+		<link rel="stylesheet" href="/static/css/lib/reset.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="/static/css/lib/fonts.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="/static/css/grid/core.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="/static/css/modules/common/masthead.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="/static/css/modules/common/footer.css" type="text/css" media="screen">
+		{% endblock page_style %}
+	</head>
+	{% endblock html_head %}
+	{% block html_body %}
+	<body {{ {'class': body_class, 'id': 'body-'+body_id}|xmlattr }}>
+		{% block page_body %}
+		<div id="page-body">
+			{% block page_masthead %}
+			<div id="page-masthead">
+				<h1>Tim Huegdon</h1>
+				<p>Tim is a Web Development Manager, Web Developer and Information
+				Architect; specialising in front-end technologies and disciplines. He
+				is employed by Yahoo!, in the UK, as a Front-End Engineering Manager. Tim
+				currently lives in a small town in Sussex with his wife, twin
+				daughters, son, and cat.</p>
+			</div>
+			{% endblock page_masthead %}
+			{% block page_footer %}
+			<div id="page-footer">
+				<p>Copyright &copy; 2009 Tim Huegdon, All Rights Reserved.</p>
+			</div>
+			{% endblock page_footer %}
+		</div>
+		{% endblock page_body %}
+	</body>
+	{% endblock html_body %}
+</html>
