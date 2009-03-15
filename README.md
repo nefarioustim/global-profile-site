@@ -13,7 +13,7 @@ On the front-end I hope to disassemble [Stubbornella's Object Oriented CSS propo
 The file layout
 ---------------
 
-I'll be using [http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard](FHS) style structure:
+I'll be using [FHS](http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard) style structure:
 
 * /etc -- will contain configuration files.
 * /lib -- will contain extra scripts. At the moment, a Twitter API abstraction.
