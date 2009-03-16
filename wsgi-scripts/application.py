@@ -1,16 +1,26 @@
 # -*- coding: utf-8 -*-
 
 import os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../lib'))
+APP_BASE        = os.path.join( os.path.dirname( __file__ ), '..' )
+LIB_BASE        = os.path.join( APP_BASE, 'lib' )
+TEMPLATES_BASE  = os.path.join( APP_BASE, 'templates' )
+
+sys.path.insert( 0, os.path.join( APP_BASE, 'lib' ) )
 
 from newf import Application, Response, ResponseRedirect
 from jinja2 import Environment, FileSystemLoader
 
-env = Environment(loader=FileSystemLoader('/Users/Shared/Sites/timhuegdon.com/templates'))
+env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 
 def root(request):
     template = env.get_template('master.html')
-    return Response(template.render({'body_id': 'index'}))
+    context = {
+        'body' : {
+            'id' : 'index'
+        },
+        'twitter' : {}
+    }
+    return Response(template.render(context))
 
 urls = (
 	(r'^/$', root),

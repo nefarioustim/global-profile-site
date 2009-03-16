@@ -2,11 +2,14 @@
 
 """Unit test for Twitter module"""
 
-import twitter
-import unittest
-import sensitive
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-class TwitterSuccessTest(unittest.TestCase):                    
+import twitter
+import sensitive
+import unittest
+
+class TwitterSuccessTest(unittest.TestCase):
     def test_get_public_timeline(self):
         """Twitter.get_public_timeline should return messages from the public timeline"""
         twittertest = twitter.Twitter()
@@ -37,7 +40,6 @@ class TwitterFailureTest(unittest.TestCase):
     def test_user_validation(self):
         """Twitter instantiation should fail with bad credentials"""
         self.assertRaises(twitter.LoginNotValid, lambda:twitter.Twitter(self.bad_user['username'], self.bad_user['password']))
-        
     
 class TwitterSanityTest(unittest.TestCase):
     pass

@@ -16,7 +16,7 @@
 	</head>
 	{% endblock html_head %}
 	{% block html_body %}
-	<body {{ {'class': body_class, 'id': 'body-'+body_id}|xmlattr }}>
+	<body {{ {'class': body['class'], 'id': 'body-'+body['id']}|xmlattr }}>
 		{% block page_body %}
 		<div id="page-body">
 			{% block page_masthead %}
@@ -29,6 +29,12 @@
 				daughters, son, and cat.</p>
 			</div>
 			{% endblock page_masthead %}
+			<div>
+				<h2>Creation</h2>
+			</div>
+			<div>
+				<h2>Invocation</h2>
+			</div>
 			{% block page_footer %}
 			<div id="page-footer">
 				<p>Copyright &copy; 2009 Tim Huegdon, All Rights Reserved.</p>
