@@ -2,34 +2,42 @@
 
 """Unit test for Twitter module"""
 
-from twitter import Twitter
+import twitter
 import unittest
 import sensitive
 
 class TwitterSuccessTest(unittest.TestCase):                    
     def test_get_public_timeline(self):
         """Twitter.get_public_timeline should return messages from the public timeline"""
-        twittertest = Twitter()
+        twittertest = twitter.Twitter()
         response = twittertest.get_public_timeline()
         # Not sure what needs to be asserted here. Will need more logic.
         self.assertTrue(response)
     
     def test_get_user_timeline(self):
         """Twitter.get_user_timeline should return messages from the user timeline"""
-        twittertest = Twitter(sensitive.twitter_user, sensitive.twitter_passwd)
+        twittertest = twitter.Twitter(sensitive.twitter_user, sensitive.twitter_passwd)
         response = twittertest.get_user_timeline()
         # Similar to above; not sure what needs to be asserted.
         self.assertTrue(response)
     
     def test_get_replies_to_user(self):
         """Twitter.get_replies_to_user should return @ reply messages to the user"""
-        twittertest = Twitter()
+        twittertest = twitter.Twitter()
         response = twittertest.get_replies_to_user()
         # Similar to above; not sure what needs to be asserted.
         self.assertTrue(response)
 
 class TwitterFailureTest(unittest.TestCase):
-    pass
+    bad_user = {
+        'username': 'thisuserdoesnotexist',
+        'password': 'thisisnotarealpassword'
+    }
+    
+    def test_user_validation(self):
+        """Twitter instantiation should fail with bad credentials"""
+        self.assertRaises(twitter.LoginNotValid, lambda:twitter.Twitter(self.bad_user['username'], self.bad_user['password']))
+        
     
 class TwitterSanityTest(unittest.TestCase):
     pass
