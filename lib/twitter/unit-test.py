@@ -39,7 +39,7 @@ class TwitterFailureTest(unittest.TestCase):
     
     def test_user_validation(self):
         """Twitter instantiation should fail with bad credentials"""
-        self.assertRaises(twitter.LoginNotValid, lambda:twitter.Twitter(self.bad_user['username'], self.bad_user['password']))
+        self.assertRaises( twitter.LoginNotValid, twitter.Twitter, self.bad_user['username'], self.bad_user['password'] )
     
 class TwitterSanityTest(unittest.TestCase):
     pass
