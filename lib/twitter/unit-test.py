@@ -24,9 +24,16 @@ class TwitterSuccessTest(unittest.TestCase):
         # Similar to above; not sure what needs to be asserted.
         self.assertTrue(response)
     
+    def test_get_friends_timeline(self):
+        """Twitter.get_user_timeline should return messages from the user timeline"""
+        twittertest = twitter.Twitter(sensitive.twitter_user, sensitive.twitter_passwd)
+        response = twittertest.get_friends_timeline()
+        # Similar to above; not sure what needs to be asserted.
+        self.assertTrue(response)
+    
     def test_get_replies_to_user(self):
         """Twitter.get_replies_to_user should return @ reply messages to the user"""
-        twittertest = twitter.Twitter()
+        twittertest = twitter.Twitter(sensitive.twitter_user, sensitive.twitter_passwd)
         response = twittertest.get_replies_to_user()
         # Similar to above; not sure what needs to be asserted.
         self.assertTrue(response)

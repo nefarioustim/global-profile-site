@@ -158,5 +158,10 @@ class Twitter:
         response = self.__authorised_get('http://twitter.com/statuses/user_timeline.xml')
         return self.__parse_messages(response)
     
+    def get_friends_timeline(self):
+        response = self.__authorised_get('http://twitter.com/statuses/friends_timeline.xml')
+        return self.__parse_messages(response)
+    
     def get_replies_to_user(self):
-        return False
+        response = self.__authorised_get('http://twitter.com/statuses/replies.xml')
+        return self.__parse_messages(response)
