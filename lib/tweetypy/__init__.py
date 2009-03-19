@@ -5,41 +5,41 @@ from xml.dom import minidom
 
 # Define exceptions
 
-class TwitterError(Exception):
+class TweetyPyError(Exception):
     """Generic parent class for exceptions"""
     pass
 
-class TwitterNotAvailable(TwitterError):
+class TwitterNotAvailable(TweetyPyError):
     """Raised when Twitter is down"""
     pass
 
-class RateLimitExceeded(TwitterError):
+class RateLimitExceeded(TweetyPyError):
     """Raised when API rate limit is exceeded"""
     pass
 
-class LoginNotValid(TwitterError):
+class LoginNotValid(TweetyPyError):
     """Raised when invalid login information is provided"""
     pass
 
-class UserNotAuthorised(TwitterError):
+class UserNotAuthorised(TweetyPyError):
     """Raised when user is not authorised to perform the action"""
     pass
 
-class NotLoggedIn(TwitterError):
+class NotLoggedIn(TweetyPyError):
     """Raised when user isn't logged in"""
     pass
 
-class MalformedXML(TwitterError):
+class MalformedXML(TweetyPyError):
     """Raised when malformed XML is returned"""
     pass
 
-class HTTPError(TwitterError):
+class HTTPError(TweetyPyError):
     """Raised for other HTTPLib errors"""
     pass
 
 # Main abstraction class
 
-class Twitter:
+class TweetyPy:
     """ Abstraction for Twitter API """
     
     logged_in   = False

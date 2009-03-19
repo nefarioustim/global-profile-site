@@ -9,7 +9,6 @@ sys.path.insert( 0, LIB_BASE )
 
 from newf import Application, Response, ResponseRedirect
 from jinja2 import Environment, FileSystemLoader
-import twitter, twitter.sensitive
 
 env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 
