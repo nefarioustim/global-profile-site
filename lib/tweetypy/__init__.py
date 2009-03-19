@@ -136,14 +136,17 @@ class TweetyPy:
         except:
             raise MalformedXML
         else:
+            def get_tag(tag):
+                return node.getElementsByTagName(tag)[0].firstChild and node.getElementsByTagName(tag)[0].firstChild.data
+            
             result = {
-                'id' : node.getElementsByTagName('id')[0].firstChild.data,
-                'name' : node.getElementsByTagName('name')[0].firstChild and node.getElementsByTagName('name')[0].firstChild.data,
-                'screen_name' : node.getElementsByTagName('screen_name')[0].firstChild.data,
-                'location' : node.getElementsByTagName('location')[0].firstChild and node.getElementsByTagName('location')[0].firstChild.data,
-                'description' : node.getElementsByTagName('description')[0].firstChild and node.getElementsByTagName('description')[0].firstChild.data,
-                'profile_image_url' : node.getElementsByTagName('profile_image_url')[0].firstChild.data,
-                'url' : node.getElementsByTagName('url')[0].firstChild and node.getElementsByTagName('url')[0].firstChild.data
+                'id' : get_tag('id'),
+                'name' : get_tag('name'),
+                'screen_name' : get_tag('screen_name'),
+                'location' : get_tag('location'),
+                'description' : get_tag('description'),
+                'profile_image_url' : get_tag('profile_image_url'),
+                'url' : get_tag('url'),
             }
 
             return result
