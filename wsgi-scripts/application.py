@@ -14,16 +14,10 @@ import twitter, twitter.sensitive
 env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 
 def root(request):
-    # Dies here for some reason. Must be something to do with the HTTP
-    # connection since the __init__ validates the login credentials. No log
-    # message though; access or error.
-    twitapi = twitter.Twitter( twitter.sensitive.twitter_user, twitter.sensitive.twitter_passwd )
-    
     context = {
         'body' : {
             'id' : 'index'
         },
-        'twitter' : twitapi.get_friends_timeline()
     }
     
     template = env.get_template('master.html')

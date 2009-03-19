@@ -1,6 +1,6 @@
 #page-masthead h1 {
-/*    background-color: #eee;*/
     color: #ccc;
+    display: inline;
     float: right;
     font-family: trebuchet, sans-serif;
     font-size: 300%;
