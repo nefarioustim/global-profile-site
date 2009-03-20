@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import urllib2, base64
+import urllib2, base64, re, time, datetime
 from xml.dom import minidom
 
 # Define exceptions
@@ -31,6 +31,10 @@ class NotLoggedIn( TweetyPyError ):
 
 class MalformedXML( TweetyPyError ):
     """Raised when malformed XML is returned"""
+    pass
+
+class MalformedDate( TweetyPyError ):
+    """Raised when a malformed date is returned"""
     pass
 
 class HTTPError( TweetyPyError ):
@@ -106,7 +110,39 @@ class TweetyPy:
                 raise HTTPError, "HTTP Error: %s ( %s )" % ( error.msg, error.code )
         else:
             return results
-        
+    
+    def __parse_date(self, date):
+        """parse out non-standard date format used by Twitter
+
+        Usually in the form: Sun Jul 13 12:44:07 +0000 2008
+        Should return: datetime.datetime(2008, 06, 13, 12, 44, 07)
+        """
+        date_regex = re.compile( r"""
+            ^
+            (?P<day_name>[a-zA-Z]+)
+            \s+
+            (?P<month_name>[a-zA-Z]+)
+            \s+
+            (?P<day>\d+)
+            \s+
+            (?P<hours>\d+)
+            :
+            (?P<minutes>\d+)
+            :
+            (?P<seconds>\d+)
+            \s+
+            \+\d+
+            \s+
+            (?P<year>\d+)
+            $
+        """, re.VERBOSE )
+
+        if date_regex.match( date ):
+            date_string = date_regex.sub( r"\g<year> \g<month_name> \g<day> \g<hours>:\g<minutes>:\g<seconds>", date )
+            return time.strptime( date_string, "%Y %b %d %H:%M:%S" )
+        else:
+            raise MalformedDate
+    
     def __parse_messages( self, messages ):
         try:
             node = minidom.parseString( messages )
@@ -122,9 +158,9 @@ class TweetyPy:
             raise MalformedXML
         else:
             result = {
-                "id" : self.__get_tag_data( "id" ),
-                "created_at" : self.__get_tag_data( "created_at" ),
-                "text" : self.__get_tag_data( "text" ),
+                "id" : self.__get_tag_data( "id", node ),
+                "created_at" : self.__parse_date( self.__get_tag_data( "created_at", node ) ),
+                "text" : self.__get_tag_data( "text", node ),
                 "user" : self.__parse_user( node.getElementsByTagName( "user" )[0].toxml( "utf-8" ) )
             }
 
@@ -137,20 +173,19 @@ class TweetyPy:
             raise MalformedXML
         else:
             result = {
-                "id" : self.__get_tag_data( "id" ),
-                "name" : self.__get_tag_data( "name" ),
-                "screen_name" : self.__get_tag_data( "screen_name" ),
-                "location" : self.__get_tag_data( "location" ),
-                "description" : self.__get_tag_data( "description" ),
-                "profile_image_url" : self.__get_tag_data( "profile_image_url" ),
-                "url" : self.__get_tag_data( "url" ),
+                "id" : self.__get_tag_data( "id", node ),
+                "name" : self.__get_tag_data( "name", node ),
+                "screen_name" : self.__get_tag_data( "screen_name", node ),
+                "location" : self.__get_tag_data( "location", node ),
+                "description" : self.__get_tag_data( "description", node ),
+                "profile_image_url" : self.__get_tag_data( "profile_image_url", node ),
+                "url" : self.__get_tag_data( "url", node ),
             }
 
             return result
     
-    def __get_tag_data( self, tag ):
+    def __get_tag_data( self, tag, node ):
         return node.getElementsByTagName( tag )[0].firstChild and node.getElementsByTagName( tag )[0].firstChild.data
-
     
     # Public Methods
     

@@ -8,6 +8,7 @@ LIB_BASE        = os.path.join( APP_BASE, 'lib' )
 
 sys.path.insert( 0, LIB_BASE )
 
+import getopt
 import pprint
 from tweetypy import *
 import tweetypy.sensitive
@@ -16,7 +17,7 @@ def makecache( argv ):
     try:
         opts, args = getopt.getopt( argv, "l:", ["limit="] )
     except getopt.GetoptError:
-        
+        pass
         
     try:
         twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
