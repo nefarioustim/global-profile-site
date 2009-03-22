@@ -1,5 +1,8 @@
-body {
-    color: #666;
+html, body {
+    background: #002244 url(/static/img/crush/body-back.png) repeat 50% 0;
+    color: #66769b;
+    font-family: "Lucida Sans","Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
+    line-height: 1.5;
     text-align: center;
 }
 #page-body {

@@ -13,8 +13,6 @@
 		<link rel="stylesheet" href="/static/css/modules/common/masthead.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="/static/css/modules/common/footer.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="/static/css/modules/common/module.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/creation.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/invocation.css" type="text/css" media="screen">
 		{% endblock page_style %}
 	</head>
 	{% endblock html_head %}
@@ -24,20 +22,14 @@
 		<div id="page-body">
 			{% block page_masthead %}
 			<div id="page-masthead">
-				<h1>Tim Huegdon</h1>
-				<p>{# Tim is a Web Development Manager, Web Developer and Information #}
-				{# 				Architect; specialising in front-end technologies and disciplines. He #}
-				{# 				is employed by Yahoo!, in the UK, as a Front-End Engineering Manager. Tim #}
-				{# 				currently lives in a small town in Sussex with his wife, twin #}
-				{# 				daughters, son, and cat. #}</p>
+				<h1><a href="http://timhuegdon.com">Tim <span>Huegdon</span></a></h1>
+				<p>Tim is a Web Development Manager, Web Developer and Information
+				Architect; specialising in front-end technologies and disciplines. He
+				is employed by Yahoo!, in the UK, as a Front-End Engineering Manager. Tim
+				currently lives in a small town in Sussex with his wife, twin
+				daughters, son, and cat.</p>
 			</div>
 			{% endblock page_masthead %}
-			<div id="creation" class="module">
-				<h2>Creation</h2>
-			</div>
-			<div id="invocation" class="module">
-				<h2>Invocation</h2>
-			</div>
 			{% block page_footer %}
 			<div id="page-footer">
 				<p>Copyright &copy; 2009 Tim Huegdon, All Rights Reserved.</p>
