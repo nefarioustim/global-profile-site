@@ -9,15 +9,3 @@ The code
 The back-end will be constructed in Python -- served via mod_wsgi in Apache -- to aide my education of said language.
 
 On the front-end I hope to disassemble [Stubbornella's Object Oriented CSS proposal](http://www.stubbornella.org/content/2009/02/28/object-oriented-css-grids-on-github/) and create something I think is more applicable, since I'm of the opinion that the concept is sound.
-
-The file layout
----------------
-
-I'll be using [FHS](http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard) style structure:
-
-* /etc -- will contain configuration files.
-* /lib -- will contain extra scripts. At the moment, a Twitter API abstraction.
-* /static -- will contain static files such as CSS and JS.
-* /templates -- does exactly what it says on the tin.
-* /var -- will contain variable files, such as logs.
-* /wsgi-scripts -- the core Python code as accessed by mod_wsgi.
