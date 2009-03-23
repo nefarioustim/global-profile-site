@@ -5,8 +5,15 @@ html, body {
     line-height: 1.5;
     text-align: center;
 }
+a {
+    color: #99aeda;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffff66;
+}
 #page-body {
-    margin: 0 auto;
+    margin: 30px auto;
     text-align: left;
     width: 900px;
 }

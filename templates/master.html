@@ -7,14 +7,14 @@
 		{% endblock page_meta %}
 		<title>{% block title %}{% endblock %}Tim Huegdon</title>
 		{% block page_style %}
-		<link rel="stylesheet" href="/static/css/lib/reset.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/lib/fonts.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/grid/core.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/grid/grid.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/common/masthead.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/common/footer.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/common/bio.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="/static/css/modules/common/module.css" type="text/css" media="screen">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/reset.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/fonts.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/grid/core.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/grid/grid.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/modules/common/masthead.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/modules/common/footer.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/modules/common/module.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/modules/bio.css">
 		{% endblock page_style %}
 	</head>
 	{% endblock html_head %}
@@ -27,23 +27,44 @@
 				<h1><a href="http://timhuegdon.com">Tim <span>Huegdon</span></a></h1>
 			</div>
 			{% endblock page_masthead %}
+			{% block page_grid %}
 			<div class="grid">
+				{% block page_content %}
 				<div id="page-content">
 					<div class="bio">
-						<p>Tim is a Web Development Manager, Web Developer and Information
-						Architect; specialising in front-end technologies and disciplines. He
-						is employed by Yahoo!, in the UK, as a Front-End Engineering Manager. Tim
-						currently lives in a small town in Sussex with his wife, twin
-						daughters, son, and cat.</p>
+						<p>Tim is a Web Development Manager, Web Developer and
+						Information Architect; specialising in front-end
+						technologies and disciplines. He is employed by
+						Yahoo!, in the UK, as a Front-End Engineering Manager.
+						Tim currently lives in a small town in Sussex with his
+						wife, twin daughters, son, and cat.</p>
 					</div>
 					<div class="grid">
-						&nbsp;
+						<div class="primary">
+							<h2>Created</h2>
+						</div>
+						<div class="secondary">
+							<h2>Manifested</h2>
+						</div>
 					</div>
 				</div>
+				{% endblock page_content %}
+				{% block page_related %}
 				<div id="page-related">
-				
+					<div class="elsewhere">
+						<h2>Elsewhere</h2>
+						<ul>
+							<li><a href="#TODO">Nefarious Designs</a></li>
+							<li><a href="#TODO"><img alt="Twitter:"> nefarioustim</a></li>
+							<li><a href="#TODO"><img alt="Twitter:"> nefarioustim</a></li>
+							<li><a href="#TODO"><img alt="Last.FM:"> nefarioustim</a></li>
+							<li><a href="#TODO"><img alt="Facebook:"> Tim Huegdon</a></li>
+						</ul>
+					</div>
 				</div>
+				{% endblock page_related %}
 			</div>
+			{% endblock page_grid %}
 			{% block page_footer %}
 			<div id="page-footer">
 				<p>Copyright &copy; 2009 Tim Huegdon, All Rights Reserved.</p>

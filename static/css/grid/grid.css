@@ -1,6 +1,5 @@
 .grid {
     display: inline-block;
-    margin: 15px 0;
 }
 .grid:after { 
 	content: ".";
@@ -18,8 +17,19 @@
     float: left;
     width: 700px;
 }
+#page-content .primary {
+    width: 385px;
+    float: left;
+    margin-right: 15px;
+}
+#page-content .secondary {
+    width: 285px;
+    float: right;
+    margin-right: 15px;
+}
 #page-related {
     display: inline;
     float: right;
+    margin: 15px 0;
     width: 200px;
 }
