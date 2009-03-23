@@ -3,8 +3,8 @@
 
 import os, sys
 
-APP_BASE        = os.path.join( os.path.dirname( __file__ ), '../..' )
-LIB_BASE        = os.path.join( APP_BASE, 'lib' )
+APP_BASE		= os.path.join( os.path.dirname( __file__ ), '../..' )
+LIB_BASE		= os.path.join( APP_BASE, 'lib' )
 
 sys.path.insert( 0, LIB_BASE )
 
@@ -14,23 +14,23 @@ from tweetypy import *
 import tweetypy.sensitive
 
 def makecache( argv ):
-    try:
-        opts, args = getopt.getopt( argv, "l:", ["limit="] )
-    except getopt.GetoptError:
-        pass
-        
-    try:
-        twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
-    except:
-        raise TwitterNotAvailable
+	try:
+		opts, args = getopt.getopt( argv, "l:", ["limit="] )
+	except getopt.GetoptError:
+		pass
+		
+	try:
+		twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
+	except:
+		raise TwitterNotAvailable
 
-    user    = twit.get_user_timeline()
-    replies = twit.get_replies_to_user()
+	user	= twit.get_user_timeline( 5 )
+	replies = twit.get_replies_to_user( 5 )
 
-    # For debug
-    pp = pprint.PrettyPrinter()
-    pp.pprint( user )
-    pp.pprint( replies )
+	# For debug
+	pp = pprint.PrettyPrinter()
+	pp.pprint( user )
+	pp.pprint( replies )
 
 if __name__ == "__main__":
-    makecache( sys.argv[1:] )
+	makecache( sys.argv[1:] )
