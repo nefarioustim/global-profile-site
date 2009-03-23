@@ -1,0 +1,25 @@
+.grid {
+    display: inline-block;
+    margin: 15px 0;
+}
+.grid:after { 
+	content: ".";
+	display: block;
+	height: 0;
+	font-size: 0;
+	clear: both;
+	visibility: hidden;
+}
+.grid {
+	display: block;
+}
+#page-content {
+    display: inline;
+    float: left;
+    width: 700px;
+}
+#page-related {
+    display: inline;
+    float: right;
+    width: 200px;
+}

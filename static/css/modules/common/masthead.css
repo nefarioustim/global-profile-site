@@ -1,6 +1,6 @@
 #page-masthead h1 {
     background: #002244;
-    margin: 30px 0;
+    margin: 30px 0 15px;
     padding: 30px;
     text-align: right;
 }
@@ -24,10 +24,4 @@
 }
 #page-masthead h1 a:hover span {
     color: #ffff66;
-}
-#page-masthead p {
-    background: #001122;
-    font-size: 123.1%;
-    margin: 30px 0;
-    padding: 30px;
 }
