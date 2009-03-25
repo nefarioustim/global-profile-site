@@ -12,6 +12,20 @@ import getopt
 import pprint
 from tweetypy import *
 import tweetypy.sensitive
+import pickle
+
+def get_tweets( limit ):
+	try:
+		twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
+	except:
+		raise TwitterNotAvailable
+
+	user		= twit.get_user_timeline( limit )
+	replies		= twit.get_replies_to_user( limit )
+	combined	= user + replies
+	combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
+	combined.reverse()
+	return combined[:limit]
 
 def make_cache( argv ):
 	try:
@@ -19,23 +33,20 @@ def make_cache( argv ):
 	except getopt.GetoptError, err:
 		print str(err)
 		sys.exit()
-		
-	try:
-		twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
-	except:
-		raise TwitterNotAvailable
 
-	user		= twit.get_user_timeline( 5 )
-	replies		= twit.get_replies_to_user( 5 )
-	combined	= user + replies
-	combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
-	combined.reverse
+	for opt, arg in opts:
+		if opt == "-l":
+			limit = int( arg )
 	
-	return combined
+	cache_file = args[0]
+	
+	tweets = get_tweets( limit )
+	
+	cache = open(cache_file, 'wb')
+
+	pickle.dump(tweets, cache)
+	
+	cache.close()
 
 if __name__ == "__main__":
-	stuff = make_cache( sys.argv[1:] )
-	
-	# For debug
-	pp = pprint.PrettyPrinter()
-	pp.pprint( stuff )
+	make_cache( sys.argv[1:] )
