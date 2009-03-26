@@ -151,6 +151,9 @@
 						</div>
 						<div class="secondary">
 							<h2>Manifested</h2>
+							{% for tweet in tweets %}
+							<p>{{ tweet.user.name }}: {{ tweet.text }}</p>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
