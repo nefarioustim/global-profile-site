@@ -15,9 +15,7 @@ env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 
 def root(request):
 	cache = open( os.path.join( APP_BASE, 'var/cache/cache.pkl' ), 'rb')
-
 	tweets = pickle.load(cache)
-	
 	cache.close()
 	
 	context = {

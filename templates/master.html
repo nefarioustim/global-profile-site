@@ -27,12 +27,20 @@
 			
 			h1, h2 {
 				font-family: "Helvetica Neue",Arial,Sans-Serif;
+				font-weight: bold;
+			}
+			
+			h1 {
 				text-transform: uppercase;
-			    font-weight: bold;
 			}
 			
 			h2 {
 				font-size: 174%;
+				border-bottom: 1px solid #001122;
+			}
+			
+			strong {
+				color: #99aeda;
 			}
 			
 			.grid {
@@ -50,11 +58,25 @@
 				display: block;
 			}
 			
+			.module {
+				background: #002244;
+			}
+			.module .heading {
+				padding: 5px 0;
+				margin: 0 15px 5px;
+			}
+			.module .body {
+				padding: 5px 15px 15px;
+			}
+			
 			.bio {
-			    background: #001122;
+				background: #001122;
+				margin: 15px 15px 15px 0;
+			}
+			
+			.bio .body {
 			    font-size: 123.1%;
 			    padding: 30px;
-			    margin: 15px 15px 15px 0;
 			}
 			
 			#page-body {
@@ -84,13 +106,15 @@
 			    width: 200px;
 			}
 			
+			#page-masthead {
+				background: #002244;
+				padding: 30px;
+				text-align: right;
+			}
 			#page-masthead h1,
 			#page-masthead strong {
-			    background: #002244;
 				font-size: 300%;
 			    letter-spacing: -0.05em;
-			    padding: 30px;
-			    text-align: right;
 			}
 			#page-masthead h1 a,
 			#page-masthead strong a {
@@ -136,8 +160,8 @@
 			<div class="grid">
 				{% block page_content %}
 				<div id="page-content">
-					<div class="bio">
-						<p>Tim is a <strong>Web Development Manager</strong>,
+					<div class="module bio">
+						<p class="body">Tim is a <strong>Web Development Manager</strong>,
 						<strong>Web Developer</strong> and <strong>Information
 						Architect</strong>; specialising in front-end
 						technologies and disciplines. He is employed by
@@ -147,23 +171,36 @@
 					</div>
 					<div class="grid">
 						<div class="primary">
-							<h2>Created</h2>
+							<div class="module create">
+								<h2 class="heading">Created</h2>
+							</div>
 						</div>
 						<div class="secondary">
-							<h2>Manifested</h2>
-							{% for tweet in tweets %}
-							<p>{{ tweet.user.name }}: {{ tweet.text }}</p>
-							{% endfor %}
+							<div class="module manifest">
+								<h2 class="heading">Manifested</h2>
+								<ul class="body">
+								{% for tweet in tweets %}
+									<li>
+										<p>
+											<strong><img src="{{ tweet.user.profile_image_url }}">
+											{{ tweet.user.name }}:</strong> {{ tweet.text }}
+										</p>
+										<p>{{ tweet.created_at }}</p>
+									</li>
+								{% endfor %}
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 				{% endblock page_content %}
 				{% block page_related %}
 				<div id="page-related">
-					<div class="elsewhere">
-						<h2>Elsewhere</h2>
-						<ul>
+					<div class="module elsewhere">
+						<h2 class="heading">Elsewhere</h2>
+						<ul class="body">
 							<li><a href="#TODO">Nefarious Designs</a></li>
+							<li><a href="#TODO"><img alt="LinkedIn:"> Tim Huegdon</a></li>
 							<li><a href="#TODO"><img alt="Twitter:"> nefarioustim</a></li>
 							<li><a href="#TODO"><img alt="Flickr:"> nefarioustim</a></li>
 							<li><a href="#TODO"><img alt="Last.FM:"> nefarioustim</a></li>

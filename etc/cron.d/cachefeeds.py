@@ -8,13 +8,10 @@ LIB_BASE		= os.path.join( APP_BASE, 'lib' )
 
 sys.path.insert( 0, LIB_BASE )
 
-import getopt
-import pprint
-from tweetypy import *
-import tweetypy.sensitive
-import pickle
-
-def get_tweets( limit ):
+def get_twitter_feed( limit ):
+	from tweetypy import *
+	import tweetypy.sensitive
+	
 	try:
 		twit = TweetyPy( tweetypy.sensitive.twitter_user, tweetypy.sensitive.twitter_passwd )
 	except:
@@ -28,6 +25,9 @@ def get_tweets( limit ):
 	return combined[:limit]
 
 def make_cache( argv ):
+	import getopt
+	import pickle
+	
 	try:
 		opts, args = getopt.getopt( argv, "l:", ["limit="] )
 	except getopt.GetoptError, err:
@@ -40,7 +40,7 @@ def make_cache( argv ):
 	
 	cache_file = args[0]
 	
-	tweets = get_tweets( limit )
+	tweets = get_twitter_feed( limit )
 	
 	cache = open(cache_file, 'wb')
 
