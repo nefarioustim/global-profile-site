@@ -36,7 +36,7 @@
 			
 			h2 {
 				font-size: 174%;
-				border-bottom: 1px solid #001122;
+				border-bottom: 1px solid #ffff66;
 			}
 			
 			strong {
@@ -185,7 +185,7 @@
 											<strong><img src="{{ tweet.user.profile_image_url }}">
 											{{ tweet.user.name }}:</strong> {{ tweet.text }}
 										</p>
-										<p>{{ tweet.created_at }}</p>
+										<p>{{ tweet.created_at_raw }}</p>
 									</li>
 								{% endfor %}
 								</ul>

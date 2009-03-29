@@ -148,10 +148,10 @@ class TweetyPy:
 			(?P<year>\d+)
 			$
 		""", re.VERBOSE )
-
+		
 		if date_regex.match( date ):
 			date_string = date_regex.sub( r"\g<year> \g<month_name> \g<day> \g<hours>:\g<minutes>:\g<seconds>", date )
-			return time.strptime( date_string, "%Y %b %d %H:%M:%S" )
+			return datetime.datetime.fromtimestamp( time.mktime( time.strptime( date_string, "%Y %b %d %H:%M:%S" ) ) )
 		else:
 			raise MalformedDate
 	
@@ -171,6 +171,7 @@ class TweetyPy:
 		else:
 			result = {
 				"id" : self.__get_tag_data( "id", node ),
+				"created_at_raw" : self.__get_tag_data( "created_at", node ),
 				"created_at" : self.__parse_date( self.__get_tag_data( "created_at", node ) ),
 				"text" : self.__get_tag_data( "text", node ),
 				"user" : self.__parse_user( node.getElementsByTagName( "user" )[0].toxml( "utf-8" ) )

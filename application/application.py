@@ -14,7 +14,9 @@ from jinja2 import Environment, FileSystemLoader
 env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 
 def root(request):
-	cache = open( os.path.join( APP_BASE, 'var/cache/cache.pkl' ), 'rb')
+	import datetime
+	import formatdelta
+	cache = open( os.path.join( APP_BASE, 'var/cache/twitter.pkl' ), 'rb')
 	tweets = pickle.load(cache)
 	cache.close()
 	
