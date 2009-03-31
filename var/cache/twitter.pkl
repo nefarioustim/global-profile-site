@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vhas a cron refreshed Twitter cache. Nice.
+Vis trying to find the right colour
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x03\x1d\x16\x13(\x00\x00\x00'
+(S'\x07\xd9\x03\x1e\x16\x07\x02\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1414323751
+V1420565968
 p25
 sS'created_at_raw'
 p26
-VSun Mar 29 22:19:40 +0000 2009
+VMon Mar 30 22:07:02 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vis adding cron jobs.
+Vhas a hot date... object.
 p37
 sg20
 g21
-(S'\x07\xd9\x03\x1d\x16\x0c1\x00\x00\x00'
+(S'\x07\xd9\x03\x1e\x143$\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1414291206
+V1420139628
 p41
 sg26
-VSun Mar 29 22:12:49 +0000 2009
+VMon Mar 30 20:51:36 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,19 +115,19 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vis prodding Flickr feeds.
+Vhas a very giggly baby son... with the hiccups.
 p52
 sg20
 g21
-(S'\x07\xd9\x03\x1d\x14,\x12\x00\x00\x00'
+(S'\x07\xd9\x03\x1e\x14#;\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1413881313
+V1420050383
 p56
 sg26
-VSun Mar 29 20:44:18 +0000 2009
+VMon Mar 30 20:35:59 +0000 2009
 p57
 sa(dp58
 g2
@@ -154,19 +154,19 @@ sg16
 Vnefarioustim
 p66
 ssg18
-Vis watching the new Rambo movie. Predictably shallow and violent, but enjoyable.
+Vneeds a link for testing, so have this: http://tinyurl.com/czvguj
 p67
 sg20
 g21
-(S'\x07\xd9\x03\x1c\x17\x12\t\x00\x00\x00'
+(S'\x07\xd9\x03\x1e\x14\x1e\x13\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1409405647
+V1420018331
 p71
 sg26
-VSat Mar 28 23:18:09 +0000 2009
+VMon Mar 30 20:30:19 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vthinks Java is the future.
+Vis at home, enjoying a bit of peace and quiet.
 p82
 sg20
 g21
-(S'\x07\xd9\x03\x1c\x11/\x11\x00\x00\x00'
+(S'\x07\xd9\x03\x1e\x14\x05\x08\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1407909466
+V1419874771
 p86
 sg26
-VSat Mar 28 17:47:17 +0000 2009
+VMon Mar 30 20:05:08 +0000 2009
 p87
 sa.

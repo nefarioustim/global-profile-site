@@ -85,9 +85,9 @@ class TweetyPy:
 		
 		if params:
 			if url.find('?') != -1:
-				url = url + urllib.urlencode(params)
+				url = url + urllib.urlencode( params )
 			else:
-				url = url + '?' + urllib.urlencode(params)
+				url = url + '?' + urllib.urlencode( params )
 		
 		request = urllib2.Request( url )
 		request.add_header( "Authorization", "Basic %s" % self.auth_string )
@@ -107,9 +107,9 @@ class TweetyPy:
 	def __anonymous_get( self, url, params=None ):
 		if params:
 			if url.find('?') != -1:
-				url = url + urllib.urlencode(params)
+				url = url + urllib.urlencode( params )
 			else:
-				url = url + '?' + urllib.urlencode(params)
+				url = url + '?' + urllib.urlencode( params )
 		
 		request = urllib2.Request( url )
 		
@@ -151,7 +151,8 @@ class TweetyPy:
 		
 		if date_regex.match( date ):
 			date_string = date_regex.sub( r"\g<year> \g<month_name> \g<day> \g<hours>:\g<minutes>:\g<seconds>", date )
-			return datetime.datetime.fromtimestamp( time.mktime( time.strptime( date_string, "%Y %b %d %H:%M:%S" ) ) )
+			date_struct = time.strptime( date_string, '%Y %b %d %H:%M:%S' )
+			return datetime.datetime( *date_struct[:6] )
 		else:
 			raise MalformedDate
 	
@@ -161,7 +162,7 @@ class TweetyPy:
 		except:
 			raise MalformedXML
 		else:
-			return [self.__parse_message( message.toxml( "utf-8" ) ) for message in node.getElementsByTagName( "status" )]
+			return [ self.__parse_message( message.toxml( "utf-8" ) ) for message in node.getElementsByTagName( "status" ) ]
 	
 	def __parse_message( self, message ):
 		try:

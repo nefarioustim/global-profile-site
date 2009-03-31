@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """Unit test for Global Profile Site Caching module"""
@@ -9,7 +10,7 @@ import unittest
 import caching
 
 class CachingSuccessTest( unittest.TestCase ):
-	accepted_counts = [1, 2, 5, 10, 50, 100]
+	accepted_counts = [ 1, 2, 5, 10, 50, 100 ]
 	
 	def test_caching_get_twitter_feed_with_no_count( self ):
 		"""Caching.get_twitter_feed should return tweets when no count is passed."""
@@ -32,7 +33,7 @@ class CachingSuccessTest( unittest.TestCase ):
 	# 	pass
 
 class CachingFailureTest( unittest.TestCase ):
-	unaccepted_counts = [-1, 0, "test"]
+	unaccepted_counts = [ -1, 0, "test" ]
 	pass
     
 class CachingSanityTest( unittest.TestCase ):

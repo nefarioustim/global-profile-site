@@ -18,8 +18,8 @@ def make_cache():
 	
 	tweets = caching.get_twitter_feed( TWITTER_COUNT )
 	
-	cache = open(TWITTER_CACHE_FILE, 'wb')
-	pickle.dump(tweets, cache)	
+	cache = open( TWITTER_CACHE_FILE, 'wb' )
+	pickle.dump( tweets, cache )	
 	cache.close()
 
 if __name__ == "__main__":

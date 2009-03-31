@@ -79,6 +79,47 @@
 			    padding: 30px;
 			}
 			
+			.manifest li {
+				border-bottom: 1px solid #334a70;
+				min-height: 56px;
+				_height: 56px;
+				padding: 5px 0;
+				position: relative;
+				display: inline-block;
+			}
+			.manifest li:after { 
+				content: ".";
+				display: block;
+				height: 0;
+				font-size: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.manifest li {
+				display: block;
+			}
+			.manifest img {
+				position: absolute;
+				top: 10px;
+				left: 0;
+			}
+			.manifest p {
+				margin-left: 55px;
+			}
+			.manifest .posted {
+				color: #334a70;
+				display: inline;
+				font-family: trebuchet, sans-serif;
+				font-size: 77%;
+				font-style: italic;
+				float: right;
+				margin-top: 4px;
+			}
+			.manifest .last-child {
+				border: 0;
+				padding-bottom: 0;
+			}
+			
 			#page-body {
 			    margin: 30px auto;
 			    text-align: left;
@@ -180,12 +221,12 @@
 								<h2 class="heading">Manifested</h2>
 								<ul class="body">
 								{% for tweet in tweets %}
-									<li>
+									<li{% if loop.last %}{{ {'class': 'last-child'}|xmlattr }}{% endif %}>
 										<p>
 											<strong><img src="{{ tweet.user.profile_image_url }}">
 											{{ tweet.user.name }}:</strong> {{ tweet.text }}
 										</p>
-										<p>{{ tweet.created_at_raw }}</p>
+										<p class="posted">{{ tweet.created_at_f }}</p>
 									</li>
 								{% endfor %}
 								</ul>
