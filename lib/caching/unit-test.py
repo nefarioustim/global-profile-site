@@ -18,10 +18,10 @@ class CachingSuccessTest( unittest.TestCase ):
 		self.assertTrue ( result )
 	
 	def test_caching_get_twitter_feed_with_count( self ):
-		"""Caching.get_twitter_feed should return same number of tweets as count."""
+		"""Caching.get_twitter_feed should return tweets when count is passed."""
 		for count in self.accepted_counts:
 			result = caching.get_twitter_feed( count )
-			self.assertEqual( count, len( result ) )
+			self.assertTrue( result )
 	
 	# def test_caching_get_flickr_feed( self ):
 	# 	pass
@@ -34,10 +34,22 @@ class CachingSuccessTest( unittest.TestCase ):
 
 class CachingFailureTest( unittest.TestCase ):
 	unaccepted_counts = [ -1, 0, "test" ]
+	
+	def test_caching_get_twitter_feed_with_count( self ):
+		"""Caching.get_twitter_feed should fail with bad count."""
+		for count in self.unaccepted_counts:
+			self.assertRaises( caching.CountNotValid, caching.get_twitter_feed, count)
+	
 	pass
     
 class CachingSanityTest( unittest.TestCase ):
-    pass
+	accepted_counts = [ 1, 2, 5, 10, 50, 100 ]
+	
+	def test_caching_get_twitter_feed_with_count( self ):
+		"""Caching.get_twitter_feed should return same number of tweets as count."""
+		for count in self.accepted_counts:
+			result = caching.get_twitter_feed( count )
+			self.assertEqual( count, len( result ) )
 
 if __name__ == "__main__":
     unittest.main()

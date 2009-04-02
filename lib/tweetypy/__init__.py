@@ -29,6 +29,10 @@ class NotLoggedIn( TweetyPyError ):
 	"""Raised when user isn"t logged in"""
 	pass
 
+class CountNotValid( TweetyPyError ):
+	"""Invalid value was passed as count"""
+	pass
+
 class MalformedXML( TweetyPyError ):
 	"""Raised when malformed XML is returned"""
 	pass
@@ -90,6 +94,7 @@ class TweetyPy:
 				url = url + '?' + urllib.urlencode( params )
 		
 		request = urllib2.Request( url )
+		request.add_header( "User−Agent", "TweetyPy/1.0 +http://nefariousdesigns.co.uk/" )
 		request.add_header( "Authorization", "Basic %s" % self.auth_string )
 		
 		try:
@@ -112,6 +117,7 @@ class TweetyPy:
 				url = url + '?' + urllib.urlencode( params )
 		
 		request = urllib2.Request( url )
+		request.add_header( "User−Agent", "TweetyPy/1.0 +http://nefariousdesigns.co.uk/" )
 		
 		try:
 			results = urllib2.urlopen( request ).read()
@@ -201,20 +207,38 @@ class TweetyPy:
 	def __get_tag_data( self, tag, node ):
 		return node.getElementsByTagName( tag )[0].firstChild and node.getElementsByTagName( tag )[0].firstChild.data
 	
+	def __test_count( count ):
+		if count != None:
+			try:
+				count = int( count )
+			except:
+				raise CountNotValid
+			else:
+				if count < 1:
+					raise CountNotValid
+	
 	# Public Methods
 	
 	def get_public_timeline( self, count=None ):
+		self.__test_count( count )
+			
 		response = self.__anonymous_get( "http://twitter.com/statuses/public_timeline.xml", { "count": count } )
 		return self.__parse_messages( response )
 	
 	def get_user_timeline( self, count=None ):
+		self.__test_count( count )
+		
 		response = self.__authorised_get( "http://twitter.com/statuses/user_timeline.xml", { "count": count }  )
 		return self.__parse_messages( response )
 	
 	def get_friends_timeline( self, count=None ):
+		self.__test_count( count )
+		
 		response = self.__authorised_get( "http://twitter.com/statuses/friends_timeline.xml", { "count": count }  )
 		return self.__parse_messages( response )
 	
 	def get_replies_to_user( self, count=None ):
+		self.__test_count( count )
+		
 		response = self.__authorised_get( "http://twitter.com/statuses/replies.xml", { "count": count }	 )
 		return self.__parse_messages( response )
