@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vis oft infuriated by his address. Just had to pay a £100 proof of residency bond because it doesn't appear correctly in a post code database
+Vhas found the culprit, thanks to @intranation; a UTF-8 encoded em-dash in his User-Agent string. Never cut and paste from PDF!
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\x01\x15%-\x00\x00\x00'
+(S'\x07\xd9\x04\x02\x16\x02*\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1434273826
+V1441280756
 p25
 sS'created_at_raw'
 p26
-VWed Apr 01 21:37:45 +0000 2009
+VThu Apr 02 22:02:42 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vis trying to remove the image of @kerin's knickers from his mind.
+Vcan make the headers work via Telnet FFS, so why not Python?
 p37
 sg20
 g21
-(S'\x07\xd9\x04\x01\x14\x0f0\x00\x00\x00'
+(S'\x07\xd9\x04\x02\x15/\x0c\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1433762287
+V1441190198
 p41
 sg26
-VWed Apr 01 20:15:48 +0000 2009
+VThu Apr 02 21:47:12 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,58 +115,58 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vhas just seen a Weebl created advert to the tune of Magical Trevor. Appreciates Trev more.
+Vthanks @intranation for his informative Tweets. Python doesn't work :(
 p52
 sg20
 g21
-(S'\x07\xd9\x04\x01\x14\x03\x07\x00\x00\x00'
+(S'\x07\xd9\x04\x02\x15\x1e\r\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1433683936
+V1441090615
 p56
 sg26
-VWed Apr 01 20:03:07 +0000 2009
+VThu Apr 02 21:30:13 +0000 2009
 p57
 sa(dp58
 g2
 (dp59
 g4
-VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+VPowered by beer and wasabi peas.
 p60
 sg6
-Vhttp://nefariousdesigns.co.uk
+Vhttp://intranation.com/
 p61
 sg8
-Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/60705695/brad-beer_normal.jpg
 p62
 sg10
-VTimbo
+VBradley Wright
 p63
 sg12
-VLondon, England
+VLondon
 p64
 sg14
-V12485
+V79773
 p65
 sg16
-Vnefarioustim
+Vintranation
 p66
 ssg18
-Vfinds the BBC piping Bob Dylan over pictures of the G20 makes his skin crawl.
+V@nefarioustim turns out it was just intermittent Twitter fail. Your Python should work now.
 p67
 sg20
 g21
-(S'\x07\xd9\x04\x01\r;(\x00\x00\x00'
+(S'\x07\xd9\x04\x02\x11\x1e$\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1431444739
+V1439670128
 p71
 sg26
-VWed Apr 01 13:59:40 +0000 2009
+VThu Apr 02 17:30:36 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vis meeting surfing.
+Vis channeling @mikewest at @isofarro whilst on the train home. "Use screen!"
 p82
 sg20
 g21
-(S'\x07\xd9\x04\x01\r:\x17\x00\x00\x00'
+(S'\x07\xd9\x04\x02\x11\x1b5\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1431437426
+V1439653693
 p86
 sg26
-VWed Apr 01 13:58:23 +0000 2009
+VThu Apr 02 17:27:53 +0000 2009
 p87
 sa.
