@@ -72,8 +72,7 @@ class TweetyPy:
 			url = self.__build_params( url, params )
 		
 		request = self.__build_request( url )
-		
-		return self.__validate_request( self, request )
+		return self.__validate_request( request )
 	
 	def __authorised_get( self, url, params=None ):
 		if not self.logged_in:
@@ -81,27 +80,26 @@ class TweetyPy:
 
 		if params:
 			url = self.__build_params( url, params )
-
+		
 		request = self.__build_request( url, auth=True )
-
-		return self.__validate_request( self, request )
+		return self.__validate_request( request )
 	
 	def __build_params( self, url, params ):
 		if url.find('?') != -1:
 			url = url + urllib.urlencode( params )
 		else:
 			url = url + '?' + urllib.urlencode( params )
-
+			
 		return url
 	
 	def __build_request( self, url, auth=False ):
 		request				= urllib2.Request( url )
-
+		
 		if auth:
 			request.add_header( "Authorization", "Basic %s" % self.auth_string )
-
+			
 		request.add_header( "User-Agent", self.USER_AGENT )
-
+		
 		return request
 	
 	def __get_tag_data( self, tag, node ):
@@ -131,9 +129,9 @@ class TweetyPy:
 				raise HTTPError, "HTTP Error: %s ( %s )" % ( error.msg, error.code )
 		else:
 			if return_bool:
-				return results
-			else:
 				return True
+			else:
+				return results
 	
 	def __verify_login( self ):
 		url 				= "http://twitter.com/account/verify_credentials.xml"
@@ -141,7 +139,12 @@ class TweetyPy:
 		
 		request = self.__build_request( url, auth=True )
 		
-		return self.__validate_request( request, return_bool=True )
+		try:
+			results = self.__validate_request( request, return_bool=True )
+		except UserNotAuthorised:
+			raise LoginNotValid
+		else:
+			return results
 	
 	def __parse_date(self, date):
 		"""parse out non-standard date format used by Twitter
