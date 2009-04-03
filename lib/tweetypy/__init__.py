@@ -72,7 +72,7 @@ class TweetyPy:
 			url = self.__build_params( url, params )
 		
 		request = self.__build_request( url )
-		return self.__validate_request( request )
+		return self.__verify_request( request )
 	
 	def __authorised_get( self, url, params=None ):
 		if not self.logged_in:
@@ -82,7 +82,7 @@ class TweetyPy:
 			url = self.__build_params( url, params )
 		
 		request = self.__build_request( url, auth=True )
-		return self.__validate_request( request )
+		return self.__verify_request( request )
 	
 	def __build_params( self, url, params ):
 		if url.find('?') != -1:
@@ -117,38 +117,9 @@ class TweetyPy:
 		
 		return True
 	
-	def __validate_request( self, request, return_bool=False ):
-		try:
-			results = urllib2.urlopen( request ).read()
-		except urllib2.HTTPError, error:
-			if error.code == 401 or error.code == 403:
-				raise UserNotAuthorised, "This user is not authorised for this action ( %s )" % error.code
-			elif error.code == 400:
-				raise RateLimitExceeded, "The rate limit has been exceeded. Please try again later"
-			else:
-				raise HTTPError, "HTTP Error: %s ( %s )" % ( error.msg, error.code )
-		else:
-			if return_bool:
-				return True
-			else:
-				return results
-	
-	def __verify_login( self ):
-		url 				= "http://twitter.com/account/verify_credentials.xml"
-		self.auth_string	= base64.encodestring( "%s:%s" % ( self.username, self.password ) )
-		
-		request = self.__build_request( url, auth=True )
-		
-		try:
-			results = self.__validate_request( request, return_bool=True )
-		except UserNotAuthorised:
-			raise LoginNotValid
-		else:
-			return results
-	
 	def __parse_date(self, date):
 		"""parse out non-standard date format used by Twitter
-
+		
 		Usually in the form: Sun Jul 13 12:44:07 +0000 2008
 		Should return: datetime.datetime(2008, 06, 13, 12, 44, 07)
 		"""
@@ -220,6 +191,35 @@ class TweetyPy:
 			}
 
 			return result
+	
+	def __verify_login( self ):
+		url 				= "http://twitter.com/account/verify_credentials.xml"
+		self.auth_string	= base64.encodestring( "%s:%s" % ( self.username, self.password ) )
+
+		request = self.__build_request( url, auth=True )
+
+		try:
+			results = self.__verify_request( request, return_bool=True )
+		except UserNotAuthorised:
+			raise LoginNotValid
+		else:
+			return results
+	
+	def __verify_request( self, request, return_bool=False ):
+		try:
+			results = urllib2.urlopen( request ).read()
+		except urllib2.HTTPError, error:
+			if error.code == 401 or error.code == 403:
+				raise UserNotAuthorised, "This user is not authorised for this action ( %s )" % error.code
+			elif error.code == 400:
+				raise RateLimitExceeded, "The rate limit has been exceeded. Please try again later"
+			else:
+				raise HTTPError, "HTTP Error: %s ( %s )" % ( error.msg, error.code )
+		else:
+			if return_bool:
+				return True
+			else:
+				return results
 	
 	# Public Methods
 	
