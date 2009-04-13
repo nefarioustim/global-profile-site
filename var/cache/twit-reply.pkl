@@ -1,0 +1,210 @@
+(lp0
+(dp1
+S'user'
+p2
+(dp3
+S'description'
+p4
+V"The bloke who peers over things"
+p5
+sS'url'
+p6
+Vhttp://neilcrosby.com/vcard
+p7
+sS'profile_image_url'
+p8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/90908159/neilcrosbylogo_normal.png
+p9
+sS'name'
+p10
+VNeil Crosby
+p11
+sS'location'
+p12
+VBedford, UK
+p13
+sS'id'
+p14
+V13529
+p15
+sS'screen_name'
+p16
+VNeilCrosby
+p17
+ssS'text'
+p18
+V@nefarioustim thanks for the email article - http://tinyurl.com/cm8kng
+p19
+sS'created_at'
+p20
+cdatetime
+datetime
+p21
+(S'\x07\xd9\x04\r\x0b\x14/\x00\x00\x00'
+p22
+tp23
+Rp24
+sg14
+V1508513799
+p25
+sS'created_at_raw'
+p26
+VMon Apr 13 11:20:47 +0000 2009
+p27
+sa(dp28
+g2
+(dp29
+g4
+VWeb and iPhone Developer
+p30
+sg6
+Vhttp://dynamicflash.com
+p31
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/19059702/steve-avatar_normal.png
+p32
+sg10
+VSteve Webster
+p33
+sg12
+VLondon, England
+p34
+sg14
+V637953
+p35
+sg16
+Vspjwebster
+p36
+ssg18
+Vsuspects @markaidanthomas will be oblivious to the conversation between @isofarro and @nefarioustim
+p37
+sg20
+g21
+(S'\x07\xd9\x04\r\n2\x0f\x00\x00\x00'
+p38
+tp39
+Rp40
+sg14
+V1508423244
+p41
+sg26
+VMon Apr 13 10:50:15 +0000 2009
+p42
+sa(dp43
+g2
+(dp44
+g4
+Vthis is my private twitter, for close friends. isofarro_public is my public twitter.
+p45
+sg6
+Vhttp://www.isolani.co.uk/
+p46
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/32827482/30516977_N00_normal.jpg
+p47
+sg10
+Visofarro
+p48
+sg12
+VSurrey, UK
+p49
+sg14
+V9171132
+p50
+sg16
+Visofarro
+p51
+ssg18
+V@nefarioustim I suspects that @markaidanthomas would delete 75% of my JavaScript and it will work better. ;-)
+p52
+sg20
+g21
+(S'\x07\xd9\x04\r\n\x13"\x00\x00\x00'
+p53
+tp54
+Rp55
+sg14
+V1508340941
+p56
+sg26
+VMon Apr 13 10:19:34 +0000 2009
+p57
+sa(dp58
+g2
+(dp59
+g4
+Vthis is my private twitter, for close friends. isofarro_public is my public twitter.
+p60
+sg6
+Vhttp://www.isolani.co.uk/
+p61
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/32827482/30516977_N00_normal.jpg
+p62
+sg10
+Visofarro
+p63
+sg12
+VSurrey, UK
+p64
+sg14
+V9171132
+p65
+sg16
+Visofarro
+p66
+ssg18
+V@nefarioustim: I'm keeping it simple, and trying to add in fieldset and legend - see if that helps cure the accessibility issues. bare-bones
+p67
+sg20
+g21
+(S'\x07\xd9\x04\r\t92\x00\x00\x00'
+p68
+tp69
+Rp70
+sg14
+V1508284903
+p71
+sg26
+VMon Apr 13 09:57:50 +0000 2009
+p72
+sa(dp73
+g2
+(dp74
+g4
+VPowered by beer and wasabi peas.
+p75
+sg6
+Vhttp://intranation.com/
+p76
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/60705695/brad-beer_normal.jpg
+p77
+sg10
+VBradley Wright
+p78
+sg12
+VLondon
+p79
+sg14
+V79773
+p80
+sg16
+Vintranation
+p81
+ssg18
+V@nefarioustim lolwordpress
+p82
+sg20
+g21
+(S'\x07\xd9\x04\r\t\x11*\x00\x00\x00'
+p83
+tp84
+Rp85
+sg14
+V1508185869
+p86
+sg26
+VMon Apr 13 09:17:42 +0000 2009
+p87
+sa.

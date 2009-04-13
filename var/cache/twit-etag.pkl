@@ -1,0 +1,6 @@
+(dp0
+S'http://twitter.com/account/verify_credentials.xml'
+p1
+S'"d08fb885d840755ce48d996550f36645"'
+p2
+s.

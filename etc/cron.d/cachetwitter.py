@@ -10,22 +10,35 @@ sys.path.insert( 0, LIB_BASE )
 
 import caching
 
-TWITTER_CACHE_FILE = "/var/www/timhuegdon.com/var/cache/twitter.pkl"
+TWITTER_CACHE_PATH = "/var/www/timhuegdon.com/var/cache/"
 TWITTER_COUNT = 5
 
 def make_cache():
 	import pickle
 	from datetime import datetime
 	
-	cache = open( TWITTER_CACHE_FILE, 'rb' )
-	tweets, etag = pickle.load( cache )
-	cache.close()
+	if os.path.exists( TWITTER_CACHE_PATH + 'twit-etag.pkl' ):
+		cache = open( TWITTER_CACHE_PATH + 'twit-etag.pkl', 'rb' )
+		etag = pickle.load( cache )
+		cache.close()
+	else:
+		etag = None
 	
-	tweets = caching.get_twitter_feed( TWITTER_COUNT, etag )
+	user, replies, etag = caching.get_twitter_feed( TWITTER_COUNT, etag )
 	
-	if tweets:
-		cache = open( TWITTER_CACHE_FILE, 'wb' )
-		pickle.dump( tweets, cache )
+	if user:
+		cache = open( TWITTER_CACHE_PATH + 'twit-user.pkl', 'wb' )
+		pickle.dump( user, cache )
+		cache.close()
+	
+	if replies:
+		cache = open( TWITTER_CACHE_PATH + 'twit-reply.pkl', 'wb' )
+		pickle.dump( replies, cache )
+		cache.close()
+	
+	if etag:
+		cache = open( TWITTER_CACHE_PATH + 'twit-etag.pkl', 'wb' )
+		pickle.dump( etag, cache )
 		cache.close()
 
 if __name__ == "__main__":

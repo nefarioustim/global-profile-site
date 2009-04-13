@@ -1,0 +1,210 @@
+(lp0
+(dp1
+S'user'
+p2
+(dp3
+S'description'
+p4
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+p5
+sS'url'
+p6
+Vhttp://nefariousdesigns.co.uk
+p7
+sS'profile_image_url'
+p8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+p9
+sS'name'
+p10
+VTimbo
+p11
+sS'location'
+p12
+VLondon, England
+p13
+sS'id'
+p14
+V12485
+p15
+sS'screen_name'
+p16
+Vnefarioustim
+p17
+ssS'text'
+p18
+Vis doin it rong.
+p19
+sS'created_at'
+p20
+cdatetime
+datetime
+p21
+(S'\x07\xd9\x04\r\x16\x12\t\x00\x00\x00'
+p22
+tp23
+Rp24
+sg14
+V1512218723
+p25
+sS'created_at_raw'
+p26
+VMon Apr 13 22:18:09 +0000 2009
+p27
+sa(dp28
+g2
+(dp29
+g4
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+p30
+sg6
+Vhttp://nefariousdesigns.co.uk
+p31
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+p32
+sg10
+VTimbo
+p33
+sg12
+VLondon, England
+p34
+sg14
+V12485
+p35
+sg16
+Vnefarioustim
+p36
+ssg18
+Vhas correctly function etag support. W00t.
+p37
+sg20
+g21
+(S'\x07\xd9\x04\r\x154\x0b\x00\x00\x00'
+p38
+tp39
+Rp40
+sg14
+V1512069313
+p41
+sg26
+VMon Apr 13 21:52:11 +0000 2009
+p42
+sa(dp43
+g2
+(dp44
+g4
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+p45
+sg6
+Vhttp://nefariousdesigns.co.uk
+p46
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+p47
+sg10
+VTimbo
+p48
+sg12
+VLondon, England
+p49
+sg14
+V12485
+p50
+sg16
+Vnefarioustim
+p51
+ssg18
+Vnotes an attempt at monetisation through Twitter going on.
+p52
+sg20
+g21
+(S'\x07\xd9\x04\r\x15\x14\x19\x00\x00\x00'
+p53
+tp54
+Rp55
+sg14
+V1511885810
+p56
+sg26
+VMon Apr 13 21:20:25 +0000 2009
+p57
+sa(dp58
+g2
+(dp59
+g4
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+p60
+sg6
+Vhttp://nefariousdesigns.co.uk
+p61
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+p62
+sg10
+VTimbo
+p63
+sg12
+VLondon, England
+p64
+sg14
+V12485
+p65
+sg16
+Vnefarioustim
+p66
+ssg18
+Vis twittering to test the Etag.
+p67
+sg20
+g21
+(S'\x07\xd9\x04\r\x15\t,\x00\x00\x00'
+p68
+tp69
+Rp70
+sg14
+V1511820639
+p71
+sg26
+VMon Apr 13 21:09:44 +0000 2009
+p72
+sa(dp73
+g2
+(dp74
+g4
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
+p75
+sg6
+Vhttp://nefariousdesigns.co.uk
+p76
+sg8
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
+p77
+sg10
+VTimbo
+p78
+sg12
+VLondon, England
+p79
+sg14
+V12485
+p80
+sg16
+Vnefarioustim
+p81
+ssg18
+Vhas just discovered the Last Modified header on Twitter's API feeds is sodding useless.
+p82
+sg20
+g21
+(S'\x07\xd9\x04\r\x14/\x05\x00\x00\x00'
+p83
+tp84
+Rp85
+sg14
+V1511671663
+p86
+sg26
+VMon Apr 13 20:47:05 +0000 2009
+p87
+sa.

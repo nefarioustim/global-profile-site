@@ -246,7 +246,7 @@ class TweetyPy:
 			if response:
 				return self.__parse_messages( response )
 			else:
-				return None
+				return []
 	
 	def get_user_timeline( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
@@ -257,7 +257,7 @@ class TweetyPy:
 			if response:
 				return self.__parse_messages( response )
 			else:
-				return None
+				return []
 	
 	def get_friends_timeline( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
@@ -268,7 +268,7 @@ class TweetyPy:
 			if response:
 				return self.__parse_messages( response )
 			else:
-				return None
+				return []
 	
 	def get_replies_to_user( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
@@ -279,4 +279,4 @@ class TweetyPy:
 			if response:
 				return self.__parse_messages( response )
 			else:
-				return None
+				return []

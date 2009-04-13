@@ -36,10 +36,4 @@ def get_twitter_feed( count=None, etag=None ):
 	user		= twit.get_user_timeline( count, etag )
 	replies		= twit.get_replies_to_user( count, etag )
 	
-	if user or replies:
-		combined	= user + replies
-		combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
-		combined.reverse()
-		return ( combined[:count], twit.etag )
-	else:
-		return None
+	return ( user, replies, twit.etag )
