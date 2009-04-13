@@ -23,7 +23,7 @@ def root(request):
 	for tweet in tweets:
 		tweet[ "text" ] = re.sub( r'http://([\w.\-/?#&;]+)', r"""<a href="http://\1">http://\1</a>""", tweet["text"] )
 		tweet[ "text" ] = re.sub( r'@(\w+)', r"""<a href="http://twitter.com/\1/">@\1</a>""", tweet["text"] )
-		tweet[ "created_at_f" ] = tweet[ "created_at" ].strftime( "%d %b at %I:%M%p" )
+		tweet[ "created_at_f" ] = tweet[ "created_at" ].strftime( "%d %b at %H:%M" )
 	
 	context = {
         'body' : {

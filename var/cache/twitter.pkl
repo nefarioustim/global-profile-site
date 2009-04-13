@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vhas found the culprit, thanks to @intranation; a UTF-8 encoded em-dash in his User-Agent string. Never cut and paste from PDF!
+Vprobably just broke his own script.
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\x02\x16\x02*\x00\x00\x00'
+(S'\x07\xd9\x04\r\x12"*\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1441280756
+V1510822922
 p25
 sS'created_at_raw'
 p26
-VThu Apr 02 22:02:42 +0000 2009
+VMon Apr 13 18:34:42 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vcan make the headers work via Telnet FFS, so why not Python?
+Vcan't see a bloody thing on his MBP screen. Damn you sun!
 p37
 sg20
 g21
-(S'\x07\xd9\x04\x02\x15/\x0c\x00\x00\x00'
+(S'\x07\xd9\x04\r\x11\x19\x1a\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1441190198
+V1510379984
 p41
 sg26
-VThu Apr 02 21:47:12 +0000 2009
+VMon Apr 13 17:25:26 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,58 +115,58 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vthanks @intranation for his informative Tweets. Python doesn't work :(
+Vjust fell asleep watching Monsters Inc on the sofa with his daughters.
 p52
 sg20
 g21
-(S'\x07\xd9\x04\x02\x15\x1e\r\x00\x00\x00'
+(S'\x07\xd9\x04\r\x11\x07\x10\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1441090615
+V1510270786
 p56
 sg26
-VThu Apr 02 21:30:13 +0000 2009
+VMon Apr 13 17:07:16 +0000 2009
 p57
 sa(dp58
 g2
 (dp59
 g4
-VPowered by beer and wasabi peas.
+VWeb developing, music loving, various instrument playing, gamer cook with a menagerie.
 p60
 sg6
-Vhttp://intranation.com/
+Vhttp://nefariousdesigns.co.uk
 p61
 sg8
-Vhttp://s3.amazonaws.com/twitter_production/profile_images/60705695/brad-beer_normal.jpg
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/59828181/Timmah2008_normal.jpg
 p62
 sg10
-VBradley Wright
+VTimbo
 p63
 sg12
-VLondon
+VLondon, England
 p64
 sg14
-V79773
+V12485
 p65
 sg16
-Vintranation
+Vnefarioustim
 p66
 ssg18
-V@nefarioustim turns out it was just intermittent Twitter fail. Your Python should work now.
+Vis full of roasted win.
 p67
 sg20
 g21
-(S'\x07\xd9\x04\x02\x11\x1e$\x00\x00\x00'
+(S'\x07\xd9\x04\r\x0f\x0e\x1a\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1439670128
+V1509600481
 p71
 sg26
-VThu Apr 02 17:30:36 +0000 2009
+VMon Apr 13 15:14:26 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vis channeling @mikewest at @isofarro whilst on the train home. "Use screen!"
+VChicken anyone? http://twitpic.com/39ed8
 p82
 sg20
 g21
-(S'\x07\xd9\x04\x02\x11\x1b5\x00\x00\x00'
+(S'\x07\xd9\x04\r\r\t\x12\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1439653693
+V1508925552
 p86
 sg26
-VThu Apr 02 17:27:53 +0000 2009
+VMon Apr 13 13:09:18 +0000 2009
 p87
 sa.

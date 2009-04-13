@@ -69,9 +69,12 @@ class TweetyPy:
 	
 	def __anonymous_get( self, url, params=None ):
 		if params:
+			if params.has_key( "last_modified" ):
+				last_modified = params[ "last_modified" ]
+				del params[ "last_modified" ]
 			url = self.__build_params( url, params )
 		
-		request = self.__build_request( url )
+		request = self.__build_request( url, last_modified=last_modified )
 		return self.__verify_request( request )
 	
 	def __authorised_get( self, url, params=None ):
@@ -79,9 +82,12 @@ class TweetyPy:
 			raise NotLoggedIn
 
 		if params:
+			if params.has_key( "last_modified" ):
+				last_modified = params[ "last_modified" ]
+				del params[ "last_modified" ]
 			url = self.__build_params( url, params )
 		
-		request = self.__build_request( url, auth=True )
+		request = self.__build_request( url, auth=True, last_modified=last_modified )
 		return self.__verify_request( request )
 	
 	def __build_params( self, url, params ):
@@ -92,8 +98,8 @@ class TweetyPy:
 			
 		return url
 	
-	def __build_request( self, url, auth=False ):
-		request				= urllib2.Request( url )
+	def __build_request( self, url, auth=False, last_modified=None ):
+		request = urllib2.Request( url )
 		
 		if auth:
 			request.add_header( "Authorization", "Basic %s" % self.auth_string )
@@ -223,22 +229,34 @@ class TweetyPy:
 	
 	# Public Methods
 	
-	def get_public_timeline( self, count=None ):
+	def get_public_timeline( self, count=None, last_modified=None ):
 		if self.__is_valid_count( count ):
-			response = self.__anonymous_get( "http://twitter.com/statuses/public_timeline.xml", { "count": count } )
+			response = self.__anonymous_get( "http://twitter.com/statuses/public_timeline.xml", {
+				"count": count,
+				"last_modified": last_modified,
+			} )
 			return self.__parse_messages( response )
 	
-	def get_user_timeline( self, count=None ):
+	def get_user_timeline( self, count=None, last_modified=None ):
 		if self.__is_valid_count( count ):
-			response = self.__authorised_get( "http://twitter.com/statuses/user_timeline.xml", { "count": count }  )
+			response = self.__authorised_get( "http://twitter.com/statuses/user_timeline.xml", {
+				"count": count,
+				"last_modified": last_modified,
+			} )
 			return self.__parse_messages( response )
 	
-	def get_friends_timeline( self, count=None ):
+	def get_friends_timeline( self, count=None, last_modified=None ):
 		if self.__is_valid_count( count ):
-			response = self.__authorised_get( "http://twitter.com/statuses/friends_timeline.xml", { "count": count }  )
+			response = self.__authorised_get( "http://twitter.com/statuses/friends_timeline.xml", {
+				"count": count,
+				"last_modified": last_modified,
+			} )
 			return self.__parse_messages( response )
 	
-	def get_replies_to_user( self, count=None ):
+	def get_replies_to_user( self, count=None, last_modified=None ):
 		if self.__is_valid_count( count ):
-			response = self.__authorised_get( "http://twitter.com/statuses/replies.xml", { "count": count }	 )
+			response = self.__authorised_get( "http://twitter.com/statuses/replies.xml", {
+				"count": count,
+				"last_modified": last_modified,
+			} )
 			return self.__parse_messages( response )

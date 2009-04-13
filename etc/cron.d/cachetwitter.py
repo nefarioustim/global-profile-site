@@ -15,8 +15,11 @@ TWITTER_COUNT = 5
 
 def make_cache():
 	import pickle
+	from datetime import datetime
 	
-	tweets = caching.get_twitter_feed( TWITTER_COUNT )
+	last_modified = datetime.fromtimestamp( os.stat( TWITTER_CACHE_FILE ).st_mtime )
+	
+	tweets = caching.get_twitter_feed( TWITTER_COUNT, last_modified )
 	
 	cache = open( TWITTER_CACHE_FILE, 'wb' )
 	pickle.dump( tweets, cache )	

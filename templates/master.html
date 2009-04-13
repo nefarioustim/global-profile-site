@@ -7,182 +7,15 @@
 		{% endblock page_meta %}
 		<title>{% block title %}{% endblock %}Tim Huegdon</title>
 		{% block page_style %}
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/reset.css">
+		<!--<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/reset.css">-->
 		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/fonts.css">
 		<style type="text/css" media="screen">
 			html, body {
-			    background: #002244 url(/static/img/crush/body-back.png) repeat 50% 0;
-			    color: #66769b;
 			    font-family: "Lucida Sans","Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
-			    line-height: 1.5;
-			    text-align: center;
-			}
-			a {
-			    color: #99aeda;
-			    text-decoration: none;
-			}
-			a:hover {
-			    color: #ffff66;
 			}
 			
 			h1, h2 {
 				font-family: "Helvetica Neue",Arial,Sans-Serif;
-				font-weight: bold;
-			}
-			
-			h1 {
-				text-transform: uppercase;
-			}
-			
-			h2 {
-				font-size: 174%;
-				border-bottom: 1px solid #ffff66;
-			}
-			
-			strong {
-				color: #99aeda;
-			}
-			
-			.grid {
-			    display: inline-block;
-			}
-			.grid:after { 
-				content: ".";
-				display: block;
-				height: 0;
-				font-size: 0;
-				clear: both;
-				visibility: hidden;
-			}
-			.grid {
-				display: block;
-			}
-			
-			.module {
-				background: #002244;
-			}
-			.module .heading {
-				padding: 5px 0;
-				margin: 0 15px 5px;
-			}
-			.module .body {
-				padding: 5px 15px 15px;
-			}
-			
-			.bio {
-				background: #001122;
-				margin: 15px 15px 15px 0;
-			}
-			
-			.bio .body {
-			    font-size: 123.1%;
-			    padding: 30px;
-			}
-			
-			.manifest li {
-				border-bottom: 1px solid #334a70;
-				min-height: 56px;
-				_height: 56px;
-				padding: 5px 0;
-				position: relative;
-				display: inline-block;
-			}
-			.manifest li:after { 
-				content: ".";
-				display: block;
-				height: 0;
-				font-size: 0;
-				clear: both;
-				visibility: hidden;
-			}
-			.manifest li {
-				display: block;
-			}
-			.manifest img {
-				position: absolute;
-				top: 10px;
-				left: 0;
-			}
-			.manifest p {
-				margin-left: 55px;
-			}
-			.manifest .posted {
-				color: #334a70;
-				display: inline;
-				font-family: trebuchet, sans-serif;
-				font-size: 77%;
-				font-style: italic;
-				float: right;
-				margin-top: 4px;
-			}
-			.manifest .last-child {
-				border: 0;
-				padding-bottom: 0;
-			}
-			
-			#page-body {
-			    margin: 30px auto;
-			    text-align: left;
-			    width: 900px;
-			}
-			#page-content {
-			    display: inline;
-			    float: left;
-			    width: 700px;
-			}
-			#page-content .primary {
-			    width: 385px;
-			    float: left;
-			    margin-right: 15px;
-			}
-			#page-content .secondary {
-			    width: 285px;
-			    float: right;
-			    margin-right: 15px;
-			}
-			#page-related {
-			    display: inline;
-			    float: right;
-			    margin: 15px 0;
-			    width: 200px;
-			}
-			
-			#page-masthead {
-				background: #002244;
-				padding: 30px;
-				text-align: right;
-			}
-			#page-masthead h1,
-			#page-masthead strong {
-				font-size: 300%;
-			    letter-spacing: -0.05em;
-			}
-			#page-masthead h1 a,
-			#page-masthead strong a {
-			    color: #ffff66;
-			    text-decoration: none;
-			}
-			#page-masthead h1 a span,
-			#page-masthead strong a span {
-			    color: #99aeda;
-			    font-weight: normal;
-			    left: -0.25em;
-			    position: relative;
-			}
-			#page-masthead h1 a:hover,
-			#page-masthead strong a:hover {
-			    color: #99aeda;
-			}
-			#page-masthead h1 a:hover span,
-			#page-masthead strong a:hover span {
-			    color: #ffff66;
-			}
-			
-			#page-footer {
-				font-family: trebuchet, sans-serif;
-			    font-size: 77%;
-				margin-top: 15px;
-			    text-align: center;
 			}
 		</style>
 		{% endblock page_style %}
@@ -194,7 +27,7 @@
 		<div id="page-body">
 			{% block page_masthead %}
 			<div id="page-masthead">
-				<h1><a href="http://timhuegdon.com">Tim <span>Huegdon</span></a></h1>
+				<h1><a href="http://timhuegdon.com">Tim Huegdon</a></h1>
 			</div>
 			{% endblock page_masthead %}
 			{% block page_grid %}
@@ -218,7 +51,7 @@
 						</div>
 						<div class="secondary">
 							<div class="module manifest">
-								<h2 class="heading">Manifested</h2>
+								<h2 class="heading">Manifest</h2>
 								<ul class="body">
 								{% for tweet in tweets %}
 									<li{% if loop.last %}{{ {'class': 'last-child'}|xmlattr }}{% endif %}>
@@ -238,7 +71,7 @@
 				{% block page_related %}
 				<div id="page-related">
 					<div class="module elsewhere">
-						<h2 class="heading">Elsewhere</h2>
+						<h2 class="heading">Profiles</h2>
 						<ul class="body">
 							<li><a href="#TODO">Nefarious Designs</a></li>
 							<li><a href="#TODO"><img alt="LinkedIn:"> Tim Huegdon</a></li>

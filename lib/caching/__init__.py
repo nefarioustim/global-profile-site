@@ -22,7 +22,7 @@ def _test_count( count ):
 			if count < 1:
 				raise CountNotValid
 
-def get_twitter_feed( count=None ):
+def get_twitter_feed( count=None, last_modified=None ):
 	_test_count( count )
 	
 	from tweetypy import TweetyPy, TwitterNotAvailable
@@ -33,8 +33,8 @@ def get_twitter_feed( count=None ):
 	except:
 		raise TwitterNotAvailable
 		
-	user		= twit.get_user_timeline( count )
-	replies		= twit.get_replies_to_user( count )
+	user		= twit.get_user_timeline( count, last_modified )
+	replies		= twit.get_replies_to_user( count, last_modified )
 	combined	= user + replies
 	combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
 	combined.reverse()
