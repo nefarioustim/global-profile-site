@@ -105,8 +105,9 @@ class TweetyPy:
 		if auth:
 			request.add_header( "Authorization", "Basic %s" % self.auth_string )
 		
-		if etag and etag[ url ]:
-			request.add_header( "If-None-Match", etag[ url ] )
+		if etag != None:
+			etag = etag.get( url )
+			request.add_header( "If-None-Match", etag )
 			
 		request.add_header( "User-Agent", self.USER_AGENT )
 		

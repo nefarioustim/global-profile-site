@@ -1,6 +1,14 @@
 (dp0
-S'http://twitter.com/account/verify_credentials.xml'
+S'http://twitter.com/statuses/replies.xml?count=5'
 p1
-S'"d08fb885d840755ce48d996550f36645"'
+S'"0a178091680b3912022700da81dccecf"'
 p2
+sS'http://twitter.com/statuses/user_timeline.xml?count=5'
+p3
+S'"ef6bf649f6124a992efd0818361a9daf"'
+p4
+sS'http://twitter.com/account/verify_credentials.xml'
+p5
+S'"cf05f4c485af56e089fa012703b3de1f"'
+p6
 s.

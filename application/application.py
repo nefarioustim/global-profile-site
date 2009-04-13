@@ -16,9 +16,20 @@ env = Environment( loader = FileSystemLoader( TEMPLATES_BASE ) )
 def root(request):
 	import datetime
 	import re
-	cache = open( os.path.join( APP_BASE, 'var/cache/twitter.pkl' ), 'rb')
-	tweets, last_modified = pickle.load(cache)
+	
+	cache = open( os.path.join( APP_BASE, 'var/cache/twit-user.pkl' ), 'rb')
+	user = pickle.load(cache)
 	cache.close()
+	
+	cache = open( os.path.join( APP_BASE, 'var/cache/twit-reply.pkl' ), 'rb')
+	replies = pickle.load(cache)
+	cache.close()
+	
+	combined  = user + replies
+	combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
+	combined.reverse()
+	length = max( len( user ), len( replies ) )
+	tweets = combined[:length]
 	
 	for tweet in tweets:
 		tweet[ "text" ] = re.sub( r'http://([\w.\-/?#&;]+)', r"""<a href="http://\1">http://\1</a>""", tweet["text"] )

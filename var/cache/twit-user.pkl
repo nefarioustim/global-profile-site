@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vis doin it rong.
+Vis doing one last pass before bed.
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\r\x16\x12\t\x00\x00\x00'
+(S'\x07\xd9\x04\r\x17\x0f\x10\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1512218723
+V1512569267
 p25
 sS'created_at_raw'
 p26
-VMon Apr 13 22:18:09 +0000 2009
+VMon Apr 13 23:15:16 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vhas correctly function etag support. W00t.
+Vis doin it right.
 p37
 sg20
 g21
-(S'\x07\xd9\x04\r\x154\x0b\x00\x00\x00'
+(S'\x07\xd9\x04\r\x17\t.\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1512069313
+V1512534924
 p41
 sg26
-VMon Apr 13 21:52:11 +0000 2009
+VMon Apr 13 23:09:46 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,19 +115,19 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vnotes an attempt at monetisation through Twitter going on.
+Vis doin it rong.
 p52
 sg20
 g21
-(S'\x07\xd9\x04\r\x15\x14\x19\x00\x00\x00'
+(S'\x07\xd9\x04\r\x16\x12\t\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1511885810
+V1512218723
 p56
 sg26
-VMon Apr 13 21:20:25 +0000 2009
+VMon Apr 13 22:18:09 +0000 2009
 p57
 sa(dp58
 g2
@@ -154,19 +154,19 @@ sg16
 Vnefarioustim
 p66
 ssg18
-Vis twittering to test the Etag.
+Vhas correctly function etag support. W00t.
 p67
 sg20
 g21
-(S'\x07\xd9\x04\r\x15\t,\x00\x00\x00'
+(S'\x07\xd9\x04\r\x154\x0b\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1511820639
+V1512069313
 p71
 sg26
-VMon Apr 13 21:09:44 +0000 2009
+VMon Apr 13 21:52:11 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vhas just discovered the Last Modified header on Twitter's API feeds is sodding useless.
+Vnotes an attempt at monetisation through Twitter going on.
 p82
 sg20
 g21
-(S'\x07\xd9\x04\r\x14/\x05\x00\x00\x00'
+(S'\x07\xd9\x04\r\x15\x14\x19\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1511671663
+V1511885810
 p86
 sg26
-VMon Apr 13 20:47:05 +0000 2009
+VMon Apr 13 21:20:25 +0000 2009
 p87
 sa.
