@@ -17,7 +17,7 @@ def root(request):
 	import datetime
 	import re
 	cache = open( os.path.join( APP_BASE, 'var/cache/twitter.pkl' ), 'rb')
-	tweets = pickle.load(cache)
+	tweets, last_modified = pickle.load(cache)
 	cache.close()
 	
 	for tweet in tweets:
@@ -31,7 +31,7 @@ def root(request):
         },
 		'tweets' : tweets
     }
-
+	
 	template = env.get_template('master.html')
 	return Response(template.render(context))
 

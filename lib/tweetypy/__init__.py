@@ -55,6 +55,7 @@ class TweetyPy:
 	password	= None
 	auth_string = ""
 	USER_AGENT	= "TweetyPy/1.0 +http://nefariousdesigns.co.uk/"
+	etag		= {}
 	
 	# Special methods
 	
@@ -69,12 +70,12 @@ class TweetyPy:
 	
 	def __anonymous_get( self, url, params=None ):
 		if params:
-			if params.has_key( "last_modified" ):
-				last_modified = params[ "last_modified" ]
-				del params[ "last_modified" ]
+			if params.has_key( "etag" ):
+				etag = params[ "etag" ]
+				del params[ "etag" ]
 			url = self.__build_params( url, params )
 		
-		request = self.__build_request( url, last_modified=last_modified )
+		request = self.__build_request( url, etag=etag )
 		return self.__verify_request( request )
 	
 	def __authorised_get( self, url, params=None ):
@@ -82,12 +83,12 @@ class TweetyPy:
 			raise NotLoggedIn
 
 		if params:
-			if params.has_key( "last_modified" ):
-				last_modified = params[ "last_modified" ]
-				del params[ "last_modified" ]
+			if params.has_key( "etag" ):
+				etag = params[ "etag" ]
+				del params[ "etag" ]
 			url = self.__build_params( url, params )
 		
-		request = self.__build_request( url, auth=True, last_modified=last_modified )
+		request = self.__build_request( url, auth=True, etag=etag )
 		return self.__verify_request( request )
 	
 	def __build_params( self, url, params ):
@@ -98,11 +99,14 @@ class TweetyPy:
 			
 		return url
 	
-	def __build_request( self, url, auth=False, last_modified=None ):
+	def __build_request( self, url, auth=False, etag=None ):
 		request = urllib2.Request( url )
 		
 		if auth:
 			request.add_header( "Authorization", "Basic %s" % self.auth_string )
+		
+		if etag and etag[ url ]:
+			request.add_header( "If-None-Match", etag[ url ] )
 			
 		request.add_header( "User-Agent", self.USER_AGENT )
 		
@@ -213,15 +217,19 @@ class TweetyPy:
 	
 	def __verify_request( self, request, return_bool=False ):
 		try:
-			results = urllib2.urlopen( request ).read()
+			response = urllib2.urlopen( request )
+			results = response.read()
 		except urllib2.HTTPError, error:
-			if error.code == 401 or error.code == 403:
+			if error.code == 304:
+				return None
+			elif error.code == 401 or error.code == 403:
 				raise UserNotAuthorised, "This user is not authorised for this action ( %s )" % error.code
 			elif error.code == 400:
 				raise RateLimitExceeded, "The rate limit has been exceeded. Please try again later"
 			else:
 				raise HTTPError, "HTTP Error: %s ( %s )" % ( error.msg, error.code )
 		else:
+			self.etag[ request.get_full_url() ] = response.headers.get( 'Etag' )
 			if return_bool:
 				return True
 			else:
@@ -229,34 +237,46 @@ class TweetyPy:
 	
 	# Public Methods
 	
-	def get_public_timeline( self, count=None, last_modified=None ):
+	def get_public_timeline( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
 			response = self.__anonymous_get( "http://twitter.com/statuses/public_timeline.xml", {
 				"count": count,
-				"last_modified": last_modified,
+				"etag": etag,
 			} )
-			return self.__parse_messages( response )
+			if response:
+				return self.__parse_messages( response )
+			else:
+				return None
 	
-	def get_user_timeline( self, count=None, last_modified=None ):
+	def get_user_timeline( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
 			response = self.__authorised_get( "http://twitter.com/statuses/user_timeline.xml", {
 				"count": count,
-				"last_modified": last_modified,
+				"etag": etag,
 			} )
-			return self.__parse_messages( response )
+			if response:
+				return self.__parse_messages( response )
+			else:
+				return None
 	
-	def get_friends_timeline( self, count=None, last_modified=None ):
+	def get_friends_timeline( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
 			response = self.__authorised_get( "http://twitter.com/statuses/friends_timeline.xml", {
 				"count": count,
-				"last_modified": last_modified,
+				"etag": etag,
 			} )
-			return self.__parse_messages( response )
+			if response:
+				return self.__parse_messages( response )
+			else:
+				return None
 	
-	def get_replies_to_user( self, count=None, last_modified=None ):
+	def get_replies_to_user( self, count=None, etag=None ):
 		if self.__is_valid_count( count ):
 			response = self.__authorised_get( "http://twitter.com/statuses/replies.xml", {
 				"count": count,
-				"last_modified": last_modified,
+				"etag": etag,
 			} )
-			return self.__parse_messages( response )
+			if response:
+				return self.__parse_messages( response )
+			else:
+				return None

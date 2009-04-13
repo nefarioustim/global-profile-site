@@ -1,4 +1,4 @@
-(lp0
+((lp0
 (dp1
 S'user'
 p2
@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vprobably just broke his own script.
+Vnotes an attempt at monetisation through Twitter going on.
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\r\x12"*\x00\x00\x00'
+(S'\x07\xd9\x04\r\x15\x14\x19\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1510822922
+V1511885810
 p25
 sS'created_at_raw'
 p26
-VMon Apr 13 18:34:42 +0000 2009
+VMon Apr 13 21:20:25 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vcan't see a bloody thing on his MBP screen. Damn you sun!
+Vis twittering to test the Etag.
 p37
 sg20
 g21
-(S'\x07\xd9\x04\r\x11\x19\x1a\x00\x00\x00'
+(S'\x07\xd9\x04\r\x15\t,\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1510379984
+V1511820639
 p41
 sg26
-VMon Apr 13 17:25:26 +0000 2009
+VMon Apr 13 21:09:44 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,19 +115,19 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vjust fell asleep watching Monsters Inc on the sofa with his daughters.
+Vhas just discovered the Last Modified header on Twitter's API feeds is sodding useless.
 p52
 sg20
 g21
-(S'\x07\xd9\x04\r\x11\x07\x10\x00\x00\x00'
+(S'\x07\xd9\x04\r\x14/\x05\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1510270786
+V1511671663
 p56
 sg26
-VMon Apr 13 17:07:16 +0000 2009
+VMon Apr 13 20:47:05 +0000 2009
 p57
 sa(dp58
 g2
@@ -154,19 +154,19 @@ sg16
 Vnefarioustim
 p66
 ssg18
-Vis full of roasted win.
+Vsuspects he should probably take the server's last-modified instead of supplying an arbitrary date.
 p67
 sg20
 g21
-(S'\x07\xd9\x04\r\x0f\x0e\x1a\x00\x00\x00'
+(S'\x07\xd9\x04\r\x13(\x1f\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1509600481
+V1511239304
 p71
 sg26
-VMon Apr 13 15:14:26 +0000 2009
+VMon Apr 13 19:40:31 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,32 @@ sg16
 Vnefarioustim
 p81
 ssg18
-VChicken anyone? http://twitpic.com/39ed8
+Vis reading RFC2616
 p82
 sg20
 g21
-(S'\x07\xd9\x04\r\r\t\x12\x00\x00\x00'
+(S'\x07\xd9\x04\r\x13")\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1508925552
+V1511202886
 p86
 sg26
-VMon Apr 13 13:09:18 +0000 2009
+VMon Apr 13 19:34:41 +0000 2009
 p87
-sa.
+sa(dp88
+S'http://twitter.com/statuses/replies.xml?count=5'
+p89
+S'"87e62fb38140fbb17ca6c3e2762d01cf"'
+p90
+sS'http://twitter.com/statuses/user_timeline.xml?count=5'
+p91
+S'"cb65407ecbbf8ad7a594a9c801214a30"'
+p92
+sS'http://twitter.com/account/verify_credentials.xml'
+p93
+S'"f73bafd372b704c356e56d788d8f664b"'
+p94
+stp95
+.

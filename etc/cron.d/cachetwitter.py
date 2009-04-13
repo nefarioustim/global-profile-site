@@ -17,13 +17,16 @@ def make_cache():
 	import pickle
 	from datetime import datetime
 	
-	last_modified = datetime.fromtimestamp( os.stat( TWITTER_CACHE_FILE ).st_mtime )
-	
-	tweets = caching.get_twitter_feed( TWITTER_COUNT, last_modified )
-	
-	cache = open( TWITTER_CACHE_FILE, 'wb' )
-	pickle.dump( tweets, cache )	
+	cache = open( TWITTER_CACHE_FILE, 'rb' )
+	tweets, etag = pickle.load( cache )
 	cache.close()
+	
+	tweets = caching.get_twitter_feed( TWITTER_COUNT, etag )
+	
+	if tweets:
+		cache = open( TWITTER_CACHE_FILE, 'wb' )
+		pickle.dump( tweets, cache )
+		cache.close()
 
 if __name__ == "__main__":
 	make_cache()
