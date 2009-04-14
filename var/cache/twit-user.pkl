@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vis doing one last pass before bed.
+Vis marvelling at the awesome crime-fighting force that is the Met.
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\r\x17\x0f\x10\x00\x00\x00'
+(S'\x07\xd9\x04\x0e\x11+!\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1512569267
+V1518321173
 p25
 sS'created_at_raw'
 p26
-VMon Apr 13 23:15:16 +0000 2009
+VTue Apr 14 17:43:33 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vis doin it right.
+Vwonders why @spjwebster's Mobile colloquy had fail.
 p37
 sg20
 g21
-(S'\x07\xd9\x04\r\x17\t.\x00\x00\x00'
+(S'\x07\xd9\x04\x0e\x11\x05\x17\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1512534924
+V1518051522
 p41
 sg26
-VMon Apr 13 23:09:46 +0000 2009
+VTue Apr 14 17:05:23 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,19 +115,19 @@ sg16
 Vnefarioustim
 p51
 ssg18
-Vis doin it rong.
+V@peterjlambert: Don't let the bottom fall out your world -- have a vindaloo and let the world fall out your bottom!
 p52
 sg20
 g21
-(S'\x07\xd9\x04\r\x16\x12\t\x00\x00\x00'
+(S'\x07\xd9\x04\x0e\x10")\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1512218723
+V1517830271
 p56
 sg26
-VMon Apr 13 22:18:09 +0000 2009
+VTue Apr 14 16:34:41 +0000 2009
 p57
 sa(dp58
 g2
@@ -154,19 +154,19 @@ sg16
 Vnefarioustim
 p66
 ssg18
-Vhas correctly function etag support. W00t.
+Vis more than a little agitated.
 p67
 sg20
 g21
-(S'\x07\xd9\x04\r\x154\x0b\x00\x00\x00'
+(S'\x07\xd9\x04\x0e\x10\x1c/\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1512069313
+V1517786646
 p71
 sg26
-VMon Apr 13 21:52:11 +0000 2009
+VTue Apr 14 16:28:47 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vnotes an attempt at monetisation through Twitter going on.
+Vis teaching the French proper English, innit.
 p82
 sg20
 g21
-(S'\x07\xd9\x04\r\x15\x14\x19\x00\x00\x00'
+(S'\x07\xd9\x04\x0e\x0e\x1f:\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1511885810
+V1516973465
 p86
 sg26
-VMon Apr 13 21:20:25 +0000 2009
+VTue Apr 14 14:31:58 +0000 2009
 p87
 sa.

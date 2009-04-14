@@ -55,40 +55,40 @@ sa(dp28
 g2
 (dp29
 g4
-VWeb and iPhone Developer
+Vthis is my private twitter, for close friends. isofarro_public is my public twitter.
 p30
 sg6
-Vhttp://dynamicflash.com
+Vhttp://www.isolani.co.uk/
 p31
 sg8
-Vhttp://s3.amazonaws.com/twitter_production/profile_images/19059702/steve-avatar_normal.png
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/32827482/30516977_N00_normal.jpg
 p32
 sg10
-VSteve Webster
+Visofarro
 p33
 sg12
-VLondon, England
+VSurrey, UK
 p34
 sg14
-V637953
+V9171132
 p35
 sg16
-Vspjwebster
+Visofarro
 p36
 ssg18
-Vsuspects @markaidanthomas will be oblivious to the conversation between @isofarro and @nefarioustim
+V@nefarioustim I suspects that @markaidanthomas would delete 75% of my JavaScript and it will work better. ;-)
 p37
 sg20
 g21
-(S'\x07\xd9\x04\r\n2\x0f\x00\x00\x00'
+(S'\x07\xd9\x04\r\n\x13"\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1508423244
+V1508340941
 p41
 sg26
-VMon Apr 13 10:50:15 +0000 2009
+VMon Apr 13 10:19:34 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,58 +115,58 @@ sg16
 Visofarro
 p51
 ssg18
-V@nefarioustim I suspects that @markaidanthomas would delete 75% of my JavaScript and it will work better. ;-)
+V@nefarioustim: I'm keeping it simple, and trying to add in fieldset and legend - see if that helps cure the accessibility issues. bare-bones
 p52
 sg20
 g21
-(S'\x07\xd9\x04\r\n\x13"\x00\x00\x00'
+(S'\x07\xd9\x04\r\t92\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1508340941
+V1508284903
 p56
 sg26
-VMon Apr 13 10:19:34 +0000 2009
+VMon Apr 13 09:57:50 +0000 2009
 p57
 sa(dp58
 g2
 (dp59
 g4
-Vthis is my private twitter, for close friends. isofarro_public is my public twitter.
+VPowered by beer and wasabi peas.
 p60
 sg6
-Vhttp://www.isolani.co.uk/
+Vhttp://intranation.com/
 p61
 sg8
-Vhttp://s3.amazonaws.com/twitter_production/profile_images/32827482/30516977_N00_normal.jpg
+Vhttp://s3.amazonaws.com/twitter_production/profile_images/60705695/brad-beer_normal.jpg
 p62
 sg10
-Visofarro
+VBradley Wright
 p63
 sg12
-VSurrey, UK
+VLondon
 p64
 sg14
-V9171132
+V79773
 p65
 sg16
-Visofarro
+Vintranation
 p66
 ssg18
-V@nefarioustim: I'm keeping it simple, and trying to add in fieldset and legend - see if that helps cure the accessibility issues. bare-bones
+V@nefarioustim lolwordpress
 p67
 sg20
 g21
-(S'\x07\xd9\x04\r\t92\x00\x00\x00'
+(S'\x07\xd9\x04\r\t\x11*\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1508284903
+V1508185869
 p71
 sg26
-VMon Apr 13 09:57:50 +0000 2009
+VMon Apr 13 09:17:42 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vintranation
 p81
 ssg18
-V@nefarioustim lolwordpress
+V@nefarioustim er, tense mixing failure then.
 p82
 sg20
 g21
-(S'\x07\xd9\x04\r\t\x11*\x00\x00\x00'
+(S'\x07\xd9\x04\x0b\x0f\x081\x00\x00\x00'
 p83
 tp84
 Rp85
 sg14
-V1508185869
+V1497292172
 p86
 sg26
-VMon Apr 13 09:17:42 +0000 2009
+VSat Apr 11 15:08:49 +0000 2009
 p87
 sa.
