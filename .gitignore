@@ -1,2 +1,3 @@
 var/log/apache/*
 sensitive.py*
+var/cache/*.pkl

@@ -1,6 +1,0 @@
-(dp0
-S'http://twitter.com/account/verify_credentials.xml'
-p1
-S'"684a360bd463e0f1d136b084331710b2"'
-p2
-s.
