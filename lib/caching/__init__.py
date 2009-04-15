@@ -37,3 +37,8 @@ def get_twitter_feed( count=None, etag=None ):
 	replies		= twit.get_replies_to_user( count, etag )
 	
 	return ( user, replies, twit.etag )
+	
+def get_blog_feed():
+	import feedparser
+	
+	return feedparser.parse( "http://feeds2.feedburner.com/nefariousdesigns" )

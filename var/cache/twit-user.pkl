@@ -33,23 +33,23 @@ Vnefarioustim
 p17
 ssS'text'
 p18
-Vis marvelling at the awesome crime-fighting force that is the Met.
+V@garethr: Thanks dude.
 p19
 sS'created_at'
 p20
 cdatetime
 datetime
 p21
-(S'\x07\xd9\x04\x0e\x11+!\x00\x00\x00'
+(S'\x07\xd9\x04\x0f\x0c\x15\x0f\x00\x00\x00'
 p22
 tp23
 Rp24
 sg14
-V1518321173
+V1524763295
 p25
 sS'created_at_raw'
 p26
-VTue Apr 14 17:43:33 +0000 2009
+VWed Apr 15 12:21:15 +0000 2009
 p27
 sa(dp28
 g2
@@ -76,19 +76,19 @@ sg16
 Vnefarioustim
 p36
 ssg18
-Vwonders why @spjwebster's Mobile colloquy had fail.
+Vthinks it seems to be Apress for the Python WIN
 p37
 sg20
 g21
-(S'\x07\xd9\x04\x0e\x11\x05\x17\x00\x00\x00'
+(S'\x07\xd9\x04\x0f\x0c\x117\x00\x00\x00'
 p38
 tp39
 Rp40
 sg14
-V1518051522
+V1524747729
 p41
 sg26
-VTue Apr 14 17:05:23 +0000 2009
+VWed Apr 15 12:17:55 +0000 2009
 p42
 sa(dp43
 g2
@@ -115,19 +115,19 @@ sg16
 Vnefarioustim
 p51
 ssg18
-V@peterjlambert: Don't let the bottom fall out your world -- have a vindaloo and let the world fall out your bottom!
+V@garethr: Which book? Link or GTFO
 p52
 sg20
 g21
-(S'\x07\xd9\x04\x0e\x10")\x00\x00\x00'
+(S'\x07\xd9\x04\x0f\x0c\x08\x1e\x00\x00\x00'
 p53
 tp54
 Rp55
 sg14
-V1517830271
+V1524704670
 p56
 sg26
-VTue Apr 14 16:34:41 +0000 2009
+VWed Apr 15 12:08:30 +0000 2009
 p57
 sa(dp58
 g2
@@ -154,19 +154,19 @@ sg16
 Vnefarioustim
 p66
 ssg18
-Vis more than a little agitated.
+V@katemonkey: "Chocolate AND a surprise!"
 p67
 sg20
 g21
-(S'\x07\xd9\x04\x0e\x10\x1c/\x00\x00\x00'
+(S'\x07\xd9\x04\x0f\x0b94\x00\x00\x00'
 p68
 tp69
 Rp70
 sg14
-V1517786646
+V1524657430
 p71
 sg26
-VTue Apr 14 16:28:47 +0000 2009
+VWed Apr 15 11:57:52 +0000 2009
 p72
 sa(dp73
 g2
@@ -193,18 +193,18 @@ sg16
 Vnefarioustim
 p81
 ssg18
-Vis teaching the French proper English, innit.
+V@philsherry: No idea. Used to like it before I found out I was Coeliac though...
 p82
 sg20
 g21
-(S'\x07\xd9\x04\x0e\x0e\x1f:\x00\x00\x00'
+(S"\x07\xd9\x04\x0f\n\x0f'\x00\x00\x00"
 p83
 tp84
 Rp85
 sg14
-V1516973465
+V1524286763
 p86
 sg26
-VTue Apr 14 14:31:58 +0000 2009
+VWed Apr 15 10:15:39 +0000 2009
 p87
 sa.
