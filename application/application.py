@@ -47,10 +47,10 @@ def root(request):
 	return Response(template.render(context))
 
 urls = (
-	(r'^/$', root),
+	( r'^/$', root ),
 )
 
-application = Application(urls)
+application = Application( urls )
 
 if __name__ == '__main__':
 	from wsgiref.simple_server import make_server
