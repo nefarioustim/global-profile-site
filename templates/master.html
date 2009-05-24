@@ -1,97 +1,59 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 <html lang="en">
-	{% block html_head %}
-	<head>
-		{% block page_meta %}
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		{% endblock page_meta %}
-		<title>{% block title %}{% endblock %}Tim Huegdon</title>
-		{% block page_style %}
-		<!--<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/reset.css">-->
-		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/lib/fonts.css">
-		<style type="text/css" media="screen">
-			html, body {
-			    font-family: "Lucida Sans","Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
-			}
-			
-			h1, h2 {
-				font-family: "Helvetica Neue",Arial,Sans-Serif;
-			}
-		</style>
-		{% endblock page_style %}
-	</head>
-	{% endblock html_head %}
-	{% block html_body %}
-	<body {{ {'class': body['class'], 'id': 'body-'+body['id']}|xmlattr }}>
-		{% block page_body %}
-		<div id="page-body">
-			{% block page_masthead %}
-			<div id="page-masthead">
-				<h1><a href="http://timhuegdon.com">Tim Huegdon</a></h1>
-			</div>
-			{% endblock page_masthead %}
-			{% block page_grid %}
-			<div class="grid">
-				{% block page_content %}
-				<div id="page-content">
-					<div class="module bio">
-						<p class="body">Tim is a <strong>Web Development Manager</strong>,
-						<strong>Web Developer</strong> and <strong>Information
-						Architect</strong>; specialising in front-end
-						technologies and disciplines. He is employed by
-						Yahoo!, in the UK, as a <strong>Front-End Engineering
-						Manager</strong>. Tim currently lives in a small town
-						in Sussex with his wife, twin daughters, son, and cat.</p>
-					</div>
-					<div class="grid">
-						<div class="primary">
-							<div class="module create">
-								<h2 class="heading">Created</h2>
-							</div>
-						</div>
-						<div class="secondary">
-							<div class="module manifest">
-								<h2 class="heading">Manifest</h2>
-								<ul class="body">
-								{% for tweet in tweets %}
-									<li{% if loop.last %}{{ {'class': 'last-child'}|xmlattr }}{% endif %}>
-										<p>
-											<strong><img src="{{ tweet.user.profile_image_url }}">
-											{{ tweet.user.name }}:</strong> {{ tweet.text }}
-										</p>
-										<p class="posted">{{ tweet.created_at_f }}</p>
-									</li>
-								{% endfor %}
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% endblock page_content %}
-				{% block page_related %}
-				<div id="page-related">
-					<div class="module elsewhere">
-						<h2 class="heading">Profiles</h2>
-						<ul class="body">
-							<li><a href="#TODO">Nefarious Designs</a></li>
-							<li><a href="#TODO"><img alt="LinkedIn:"> Tim Huegdon</a></li>
-							<li><a href="#TODO"><img alt="Twitter:"> nefarioustim</a></li>
-							<li><a href="#TODO"><img alt="Flickr:"> nefarioustim</a></li>
-							<li><a href="#TODO"><img alt="Last.FM:"> nefarioustim</a></li>
-							<li><a href="#TODO"><img alt="Facebook:"> Tim Huegdon</a></li>
-						</ul>
-					</div>
-				</div>
-				{% endblock page_related %}
-			</div>
-			{% endblock page_grid %}
-			{% block page_footer %}
-			<div id="page-footer">
-				<p>Copyright &copy; 2009 Tim Huegdon, All Rights Reserved.</p>
-			</div>
-			{% endblock page_footer %}
-		</div>
-		{% endblock page_body %}
-	</body>
-	{% endblock html_body %}
+    <head>
+        <title>Tim Huegdon</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <h1>Tim Huegdon</h1>
+        
+        <p>Tim is a <strong>Web Development Manager</strong>,
+        <strong>Web Developer</strong> and <strong>Information
+        Architect</strong>; specialising in front-end
+        technologies and disciplines. He is employed by
+        Yahoo!, in the UK, as a <strong>Front-End Engineering
+        Manager</strong>.</p>
+        
+        <h2>Created content</h2>
+        
+        <h3>Nefarious Designs</h3>
+        
+        {% for entry in context.blog.entries %}
+            
+            <h4>{{ entry.title }}</h4>
+            <p>{{ entry.published }}</p>
+            
+        {% endfor %}
+        
+        <h3>Flickr</h3>
+        
+        {% for entry in context.flickr.entries %}
+            
+            <h4>{{ entry.title }}</h4>
+            <p>{{ entry.content[0].value }}</p>
+            
+        {% endfor %}
+        
+        <h2>Lifestream</h2>
+        
+        <h3>Last.fm</h3>
+        
+        {% for entry in context.lastfm.entries %}
+            
+            <h4>{{ entry.title }}</h4>
+            <p>{{ entry.updated }}</p>
+            
+        {% endfor %}
+        
+        <h3>Twitter</h3>
+        
+        {% for tweet in context.tweets %}
+        
+            <h4>{{ tweet.user.screen_name }}</h4>
+            <p>{{ tweet.text }}</p>
+        
+        {% endfor %}
+        
+        {{ context }}
+    </body>
 </html>

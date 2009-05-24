@@ -7,7 +7,7 @@ TEMPLATES_BASE  = os.path.join( APP_BASE, 'templates' )
 
 sys.path.insert( 0, LIB_BASE )
 
-import pickle
+import gzipickle
 from newf import Application, Response, ResponseRedirect
 from jinja2 import Environment, FileSystemLoader
 
@@ -17,13 +17,14 @@ def root(request):
 	import datetime
 	import re
 	
-	cache = open( os.path.join( APP_BASE, 'var/cache/twit-user.pkl' ), 'rb')
-	user = pickle.load(cache)
-	cache.close()
+	blog = list( gzipickle.load( os.path.join( APP_BASE, 'var/cache/blog-feed.pkl' ) ) )[0]
 	
-	cache = open( os.path.join( APP_BASE, 'var/cache/twit-reply.pkl' ), 'rb')
-	replies = pickle.load(cache)
-	cache.close()
+	flickr = list( gzipickle.load( os.path.join( APP_BASE, 'var/cache/flickr-feed.pkl' ) ) )[0]
+	
+	lastfm = list( gzipickle.load( os.path.join( APP_BASE, 'var/cache/lastfm-feed.pkl' ) ) )[0]
+	
+	user = list( gzipickle.load( os.path.join( APP_BASE, 'var/cache/twit-user.pkl' ) ) )[0]
+	replies = list( gzipickle.load( os.path.join( APP_BASE, 'var/cache/twit-reply.pkl' ) ) )[0]
 	
 	combined  = user + replies
 	combined.sort( lambda x, y: cmp( x["created_at"], y["created_at"] ) )
@@ -40,11 +41,14 @@ def root(request):
         'body' : {
             'id' : 'index'
         },
-		'tweets' : tweets
+        'blog' : blog,
+        'flickr' : flickr,
+        'lastfm' : lastfm,
+		'tweets' : tweets,
     }
 	
 	template = env.get_template('master.html')
-	return Response(template.render(context))
+	return Response(template.render( context = context ))
 
 urls = (
 	( r'^/$', root ),
