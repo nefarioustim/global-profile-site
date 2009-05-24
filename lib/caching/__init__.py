@@ -2,7 +2,21 @@
 
 """ Feed caching for Global Profile Site """
 
+#----------------------------------------
+# Global imports
+#----------------------------------------
+import os
+
+#----------------------------------------
+# Register globals
+#----------------------------------------
+
+APP_BASE        = os.path.join( os.path.dirname( __file__ ), '../..' )
+CACHE_BASE      = os.path.join( APP_BASE, 'var/cache' )
+
+#----------------------------------------
 # Define exceptions
+#----------------------------------------
 
 class CachingError( Exception ):
     """Generic parent class for exceptions"""
@@ -11,6 +25,10 @@ class CachingError( Exception ):
 class CountNotValid( CachingError ):
     """Invalid value was passed as count"""
     pass
+
+#----------------------------------------
+# Functions
+#----------------------------------------
 
 def _test_count( count ):
     if count != None:
@@ -22,7 +40,6 @@ def _test_count( count ):
             if count < 1:
                 raise CountNotValid
 
-#----------------------------------------
 def get_twitter_feed( count=None, etag=None ):
     _test_count( count )
     
@@ -38,27 +55,41 @@ def get_twitter_feed( count=None, etag=None ):
     replies     = twit.get_replies_to_user( count, etag )
     
     return ( user, replies, twit.etag )
-#----------------------------------------
 
-# Needs refactoring.
-
-#----------------------------------------
-def get_blog_feed( etag = None, modified = None ):
+def get_feed( url, count = None, etag = None, modified = None ):
+    _test_count( count )
+    
     import feedparser
     
-    return feedparser.parse( r"http://feeds2.feedburner.com/nefariousdesigns", etag = etag, modified = modified )
-#----------------------------------------
-
-#----------------------------------------
-def get_flickr_feed( etag = None, modified = None ):
-    import feedparser
+    feed = feedparser.parse( url, etag = etag, modified = modified )
     
-    return feedparser.parse( r"http://api.flickr.com/services/feeds/photos_public.gne?id=27203808@N00&lang=en-gb&format=atom", etag = etag, modified = modified )
-#----------------------------------------
-
-#----------------------------------------
-def get_lastfm_feed( etag = None, modified = None ):
-    import feedparser
+    if feed.status != 304 and count != None:
+        feed.entries    = feed.entries[:count]
     
-    return feedparser.parse( r"http://ws.audioscrobbler.com/1.0/user/nefarioustim/recenttracks.rss", etag = etag, modified = modified )
-#----------------------------------------
+    return feed
+
+def make_cache( name, url, count = None ):
+    
+    """Builds cache from feed using the universal feeds parser."""
+    
+    _test_count( count )
+    
+    import gzipickle
+    from datetime import datetime
+    
+    path = os.path.join( CACHE_BASE, name + '-feed.pkl' )
+    
+    if os.path.exists( path ):
+        feed        = list( gzipickle.load( path ) )[0]
+        etag        = feed.etag
+        modified    = feed.modified
+    else:
+        etag        = None
+        modified    = None
+    
+    feed = get_feed( url, count, etag = etag, modified = modified )
+    
+    if feed.status != 304:
+        gzipickle.save( path, feed )
+    else:
+        print "304 returned; not fetching."
