@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" Feed caching for Global Profile Site """
+"""Feed caching for Global Profile Site"""
 
 #----------------------------------------
 # Global imports
@@ -8,7 +8,7 @@
 import os
 
 #----------------------------------------
-# Register globals
+# Register constants
 #----------------------------------------
 
 APP_BASE = os.path.join(os.path.dirname(__file__), '../..')

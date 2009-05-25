@@ -1,8 +1,44 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en-GB">
     <head>
         <title>Tim Huegdon</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="http://static.timhuegdon.com/css/lib/reset.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="http://static.timhuegdon.com/css/lib/fonts.css" type="text/css" media="screen">
+        <style type="text/css">
+            html {
+                text-align: center;
+            }
+            body {
+                color: #333333;
+                margin: 0 auto;
+                text-align: left;
+                width: 400px;
+            }
+            h1, h2, h3, h4 {
+                font-family: "trebuchet ms";
+                font-weight: bold;
+                margin: 0.5em 0;
+                text-transform: lowercase;
+            }
+            h1 {
+                font-size: 500%;
+                letter-spacing: -0.1em;
+            }
+            h2 {
+                font-size: 250%;
+            }
+            h3 {
+                font-size: 150%;
+            }
+            p {
+                font-family: georgia;
+                font-size: 100%;
+            }
+            strong {
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <h1>Tim Huegdon</h1>
@@ -14,22 +50,54 @@
         Yahoo!, in the UK, as a <strong>Front-End Engineering
         Manager</strong>.</p>
         
+        <h2>Elsewhere</h2>
+        
+        <ul>
+            <li>
+                <h3><a href="http://nefariousdesigns.co.uk/" rel="me">Nefarious Designs</a></h3>
+                <p><a href="http://nefariousdesigns.co.uk/" rel="me">http://nefariousdesigns.co.uk/</a></p>
+            </li>
+            <li>
+                <h3><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me">LinkedIn</a></h3>
+                <p><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me">http://www.linkedin.com/pub/dir/tim/huegdon/</a></p>
+            </li>
+            <li>
+                <h3><a href="http://www.flickr.com/photos/nefarioustim/" rel="me">Flickr</a></h3>
+                <p><a href="http://www.flickr.com/photos/nefarioustim/" rel="me">http://www.flickr.com/photos/nefarioustim/</a></p>
+            </li>
+            <li>
+                <h3><a href="http://delicious.com/nefarioustim/" rel="me">Delicious</a></h3>
+                <p><a href="http://delicious.com/nefarioustim/" rel="me">http://delicious.com/nefarioustim/</a></p>
+            </li>
+            <li>
+                <h3><a href="http://twitter.com/nefarioustim/" rel="me">Twitter</a></h3>
+                <p><a href="http://twitter.com/nefarioustim/" rel="me">http://twitter.com/nefarioustim/</a></p>
+            </li>
+            <li>
+                <h3><a href="http://last.fm/user/nefarioustim/" rel="me">Last.fm</a></h3>
+                <p><a href="http://last.fm/user/nefarioustim/" rel="me">http://last.fm/user/nefarioustim/</a></p>
+            </li>
+        </ul>
+        
         <h2>Created content</h2>
         
         <h3>Nefarious Designs</h3>
         
-        {% for entry in context.blog.entries %}
-            
-            <h4>{{ entry.title }}</h4>
-            <p>{{ entry.published }}</p>
-            
+        <ul>
+        {% for entry in context.blog %}
+            <li>
+                <p><a href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></p>
+                <p>{{ entry.published_parsed }}</p>
+            </li>
         {% endfor %}
+        </li>
         
         <h3>Flickr</h3>
         
-        {% for entry in context.flickr.entries %}
+        {% for entry in context.flickr %}
             
             <h4>{{ entry.title }}</h4>
+            <p>{{ entry.published_parsed }}</p>
             <p>{{ entry.content[0].value }}</p>
             
         {% endfor %}
@@ -38,10 +106,10 @@
         
         <h3>Last.fm</h3>
         
-        {% for entry in context.lastfm.entries %}
+        {% for entry in context.lastfm %}
             
-            <h4>{{ entry.title }}</h4>
-            <p>{{ entry.updated }}</p>
+            <p>{{ entry.title }}</p>
+            <p>{{ entry.updated_parsed }}</p>
             
         {% endfor %}
         
@@ -49,11 +117,9 @@
         
         {% for tweet in context.tweets %}
         
-            <h4>{{ tweet.user.screen_name }}</h4>
-            <p>{{ tweet.text }}</p>
+            <p><strong>{{ tweet.user.screen_name }}</strong> {{ tweet.text }}</p>
+            <p>{{ tweet.created_tuple }}</p>
         
         {% endfor %}
-        
-        {{ context }}
     </body>
 </html>
