@@ -82,7 +82,10 @@ def make_cache(name, url, count=None):
     if os.path.exists(path):
         feed = list(gzipickle.load(path))[0]
         etag = feed.etag
-        modified = feed.modified
+        try:
+            modified = feed.modified
+        except AttributeError:
+            modified = None
     else:
         etag = None
         modified = None

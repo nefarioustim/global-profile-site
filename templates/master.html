@@ -7,119 +7,227 @@
         <link rel="stylesheet" href="http://static.timhuegdon.com/css/lib/fonts.css" type="text/css" media="screen">
         <style type="text/css">
             html {
+                background: #004485 url(http://static.timhuegdon.com/img/html-back.png) repeat-x 50% 0;
                 text-align: center;
             }
             body {
-                color: #333333;
-                margin: 0 auto;
+                color: #fff;
+                font-family: "helvetica neue", arial;
+                margin: 15px auto 20px;
                 text-align: left;
-                width: 400px;
+                width: 500px;
             }
             h1, h2, h3, h4 {
                 font-family: "trebuchet ms";
                 font-weight: bold;
-                margin: 0.5em 0;
                 text-transform: lowercase;
             }
             h1 {
                 font-size: 500%;
-                letter-spacing: -0.1em;
+                font-style: italic;
+                letter-spacing: -0.05em;
+                padding: 10px;
+                text-align: right;
             }
             h2 {
-                font-size: 250%;
+                font-size: 246%;
             }
             h3 {
                 font-size: 150%;
             }
             p {
-                font-family: georgia;
                 font-size: 100%;
+                line-height: 1.4;
             }
             strong {
                 font-weight: bold;
             }
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+            header {
+                display: block;
+            }
+            section {
+                background: #222;
+                border-bottom: 1px solid #222;
+                display: block;
+                position: relative;
+            }
+            section header {
+                background: url(http://static.timhuegdon.com/img/heading-back-psd.png) repeat-x 50% 0;
+                border: 1px solid;
+                border-color: #616466 #191919 #191919 #616466;
+                padding: 0 9px 9px;
+            }
+            section header h2 {
+                background: url(http://static.timhuegdon.com/img/h2-back-psd.png) no-repeat 50% 100%;
+                line-height: 1.3;
+            }
+            section section header {
+                background: none;
+                border: none;
+                padding: 0;
+            }
+            footer {
+                color: #001122;
+                display: block;
+                font-size: 77%;
+                line-height: 1.4;
+                margin-top: 20px;
+                text-align: center;
+            }
+            
+            .hidden {
+                height: 0;
+                left: -9999em;
+                overflow: hidden;
+                position: absolute;
+            }
+            
+            #about-me p {
+                font-size: 114%;
+                margin: 20px 40px;
+            }
+            #about-me strong {
+                color: #c0e0ff;
+                font-family: georgia;
+                font-size: 134%;
+                font-style: italic;
+                font-weight: normal;
+                padding: 0.2em 0 0 0.1em;
+            }
+            
+            #me-elsewhere li {
+                background: #393939;
+                margin: 20px;
+                padding: 10px;
+            }
+            #me-elsewhere li.alt {
+                background: #2d2d2d;
+            }
+            #me-elsewhere li span {
+                display: block;
+            }
+            #me-elsewhere li img {
+                border: 4px solid #fff;
+                display: inline;
+                float: right;
+            }
         </style>
     </head>
     <body>
-        <h1>Tim Huegdon</h1>
+        <header>
+            <h1>Tim Huegdon</h1>
+        </header>
         
-        <p>Tim is a <strong>Web Development Manager</strong>,
-        <strong>Web Developer</strong> and <strong>Information
-        Architect</strong>; specialising in front-end
-        technologies and disciplines. He is employed by
-        Yahoo!, in the UK, as a <strong>Front-End Engineering
-        Manager</strong>.</p>
-        
-        <h2>Elsewhere</h2>
-        
-        <ul>
-            <li>
-                <h3><a href="http://nefariousdesigns.co.uk/" rel="me">Nefarious Designs</a></h3>
-                <p><a href="http://nefariousdesigns.co.uk/" rel="me">http://nefariousdesigns.co.uk/</a></p>
-            </li>
-            <li>
-                <h3><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me">LinkedIn</a></h3>
-                <p><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me">http://www.linkedin.com/pub/dir/tim/huegdon/</a></p>
-            </li>
-            <li>
-                <h3><a href="http://www.flickr.com/photos/nefarioustim/" rel="me">Flickr</a></h3>
-                <p><a href="http://www.flickr.com/photos/nefarioustim/" rel="me">http://www.flickr.com/photos/nefarioustim/</a></p>
-            </li>
-            <li>
-                <h3><a href="http://delicious.com/nefarioustim/" rel="me">Delicious</a></h3>
-                <p><a href="http://delicious.com/nefarioustim/" rel="me">http://delicious.com/nefarioustim/</a></p>
-            </li>
-            <li>
-                <h3><a href="http://twitter.com/nefarioustim/" rel="me">Twitter</a></h3>
-                <p><a href="http://twitter.com/nefarioustim/" rel="me">http://twitter.com/nefarioustim/</a></p>
-            </li>
-            <li>
-                <h3><a href="http://last.fm/user/nefarioustim/" rel="me">Last.fm</a></h3>
-                <p><a href="http://last.fm/user/nefarioustim/" rel="me">http://last.fm/user/nefarioustim/</a></p>
-            </li>
-        </ul>
-        
-        <h2>Created content</h2>
-        
-        <h3>Nefarious Designs</h3>
-        
-        <ul>
-        {% for entry in context.blog %}
-            <li>
-                <p><a href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></p>
-                <p>{{ entry.published_parsed }}</p>
-            </li>
-        {% endfor %}
-        </li>
-        
-        <h3>Flickr</h3>
-        
-        {% for entry in context.flickr %}
+        <section id="about-me">
+            <header>
+                <h2>About Me</h2>
+            </header>
             
-            <h4>{{ entry.title }}</h4>
-            <p>{{ entry.published_parsed }}</p>
-            <p>{{ entry.content[0].value }}</p>
+            <p>I am a <strong>Web Development Manager</strong>,
+            <strong>Web Developer</strong> and <strong>Information
+            Architect</strong>; specialising in <strong>front-end</strong>
+            technologies and disciplines. I am employed by
+            Yahoo!, in the UK, as a <strong>Front-End Engineering
+            Manager</strong>.</p>
             
-        {% endfor %}
+            <p>I build wicked awesome websites using <strong>Python</strong>,
+            <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>,
+            and <strong>CSS</strong>.</p>
+        </section>
         
-        <h2>Lifestream</h2>
+        <section id="me-elsewhere">
+            <header>
+                <h2>Me Elsewhere</h2>
+            </header>
         
-        <h3>Last.fm</h3>
+            <ul>
+                <li>
+                    <h3><a href="http://nefariousdesigns.co.uk/" rel="me"><img src="http://static.timhuegdon.com/img/nef-shot-crop.png" width="142" height="32" alt="">Nefarious Designs</h3>
+                    <p><a href="http://nefariousdesigns.co.uk/" rel="me">http://nefariousdesigns.co.uk/</a></p>
+                </li>
+                <li class="alt">
+                    <h3><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me"><img src="http://static.timhuegdon.com/img/linked-shot-crop.png" width="142" height="32" alt="">LinkedIn</a></h3>
+                    <p><a href="http://www.linkedin.com/pub/dir/tim/huegdon/" rel="me">http://www.linkedin.com/pub/dir/tim/huegdon/</a></p>
+                </li>
+                <li>
+                    <h3><a href="http://www.flickr.com/photos/nefarioustim/" rel="me"><img src="http://static.timhuegdon.com/img/nef-shot-crop.png" width="142" height="32" alt="">Flickr</a></h3>
+                    <p><a href="http://www.flickr.com/photos/nefarioustim/" rel="me">http://www.flickr.com/photos/nefarioustim/</a></p>
+                </li>
+                <li class="alt">
+                    <h3><a href="http://delicious.com/nefarioustim/" rel="me"><img src="http://static.timhuegdon.com/img/deli-shot-crop.png" width="142" height="32" alt="">Delicious</a></h3>
+                    <p><a href="http://delicious.com/nefarioustim/" rel="me">http://delicious.com/nefarioustim/</a></p>
+                </li>
+                <li>
+                    <h3><a href="http://twitter.com/nefarioustim/" rel="me"><img src="http://static.timhuegdon.com/img/twit-shot-crop.png" width="142" height="32" alt="">Twitter</a></h3>
+                    <p><a href="http://twitter.com/nefarioustim/" rel="me">http://twitter.com/nefarioustim/</a></p>
+                </li>
+                <li class="alt">
+                    <h3><a href="http://last.fm/user/nefarioustim/" rel="me"><img src="http://static.timhuegdon.com/img/nef-shot-crop.png" width="142" height="32" alt="">Last.fm</a></h3>
+                    <p><a href="http://last.fm/user/nefarioustim/" rel="me">http://last.fm/user/nefarioustim/</a></p>
+                </li>
+            </ul>
+        </section>
         
-        {% for entry in context.lastfm %}
+        <section id="created-content">
+            <header>
+                <h2>Created content</h2>
+            </header>
             
-            <p>{{ entry.title }}</p>
-            <p>{{ entry.updated_parsed }}</p>
+            <section>
+                <header>
+                    <h3>Nefarious Designs</h3>
+                </header>
+                
+                {% for entry in context.feeds.blog %}
+                    <article>
+                        <p><a href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></p>
+                        <p><time>{{ entry.published_f }}</time></p>
+                    </article>
+                {% endfor %}
+            </section>
             
-        {% endfor %}
+            <section>
+                <header>
+                    <h3>Flickr</h3>
+                </header>
+                
+                <ul>
+                    {% for entry in context.feeds.flickr %}
+                    
+                    <li><a href="{{ entry.links[0].url }}"><img src="{{ entry.img_src }}" alt="View photograph entitled '{{ entry.title }}'."></a></li>
+                    
+                    {% endfor %}
+                </ul>
+            </section>
+        </section>
         
-        <h3>Twitter</h3>
+        <section id="lifestream">
+            <header>
+                <h2>Lifestream</h2>
+            </header>
+            
+            {% for entry in context.lifestream %}
+                {% if entry.feed == 'twit_user' or entry.feed == 'twit_replies': %}
+                    <article>
+                        <p><a href="http://twitter.com/{{ entry.user.screen_name }}/"><strong>{{ entry.user.screen_name }}</strong></a> {{ entry.text }}</p>
+                        <p><time>{{ entry.created_at_f }}</time></p>
+                    </article>
+                {% else %}
+                    <article>
+                        <p>{{ entry.title }}</p>
+                        <p><time>{{ entry.updated_f }}</time></p>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </section>
         
-        {% for tweet in context.tweets %}
-        
-            <p><strong>{{ tweet.user.screen_name }}</strong> {{ tweet.text }}</p>
-            <p>{{ tweet.created_tuple }}</p>
-        
-        {% endfor %}
+        <footer>
+            <p>Copyright &copy; 2009 Tim Huegdon, all rights reserved.</p>
+            <p>Inspired by Tim Van Damme.</p>
+        </footer>
     </body>
 </html>

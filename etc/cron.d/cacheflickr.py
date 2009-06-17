@@ -22,4 +22,4 @@ sys.path.insert(0, LIB_BASE)
 
 import caching
 
-caching.make_cache("flickr", "http://api.flickr.com/services/feeds/photos_public.gne?id=27203808@N00&lang=en-gb&format=atom", 5)
+caching.make_cache("flickr", "http://api.flickr.com/services/feeds/photos_public.gne?id=27203808@N00&lang=en-gb&format=atom")
